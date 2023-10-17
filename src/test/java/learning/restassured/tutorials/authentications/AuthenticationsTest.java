@@ -50,8 +50,8 @@ public class AuthenticationsTest {
     }
 
     @Test(priority = 4)
-    public void bearerTokenAuthentication() throws IOException {
-        String bearerToken = FileReader.readPropertiesFile(OPEN_WEATHER_MAP_API_KEY_PATH).getProperty("openWeatherMapApiKey");
+    public void bearerTokenAuthentication() {
+        String bearerToken = "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";
         given()
                 .header("Authorization", "Bearer " + bearerToken)
                 .when()
@@ -73,8 +73,8 @@ public class AuthenticationsTest {
     }
 
     @Test(priority = 6)
-    public void apiKeyAuthentication() {
-        String apiKey = "474486531d9e6584d3f0aa376a4eaa3b";
+    public void apiKeyAuthentication() throws IOException {
+        String apiKey = FileReader.readPropertiesFile(OPEN_WEATHER_MAP_API_KEY_PATH).getProperty("openWeatherMapApiKey");
         given()
                 .queryParam("appid", apiKey)
                 .when()
@@ -82,6 +82,6 @@ public class AuthenticationsTest {
                 .then()
                 .statusCode(200)
                 .body("coord.lon", equalTo(78.4744F))
-                .log().all();
+                .log().body();
     }
 }
