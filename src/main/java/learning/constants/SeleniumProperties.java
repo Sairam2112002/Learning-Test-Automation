@@ -1,4 +1,4 @@
-package learning.selenium.constants;
+package learning.constants;
 
 public class SeleniumProperties {
     public static final String CHROME_DRIVER = "webdriver.chrome.driver";

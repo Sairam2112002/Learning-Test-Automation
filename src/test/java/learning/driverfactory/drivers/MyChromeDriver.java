@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import static learning.selenium.constants.SeleniumProperties.CHROME_ARGUMENT;
+import static learning.constants.SeleniumProperties.CHROME_ARGUMENT;
 
 public class MyChromeDriver implements Driver {
     @Override

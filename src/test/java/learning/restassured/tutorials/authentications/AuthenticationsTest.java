@@ -1,9 +1,15 @@
 package learning.restassured.tutorials.authentications;
 
+import learning.utilities.FileReader;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 import static io.restassured.RestAssured.given;
+import static learning.constants.SeleniumProperties.BROWSER_PROPERTIES_PATH;
 import static org.hamcrest.Matchers.equalTo;
+
+import static learning.constants.APIKeysPath.OPEN_WEATHER_MAP_API_KEY_PATH;
 
 public class AuthenticationsTest {
     @Test(priority = 1)
@@ -44,8 +50,8 @@ public class AuthenticationsTest {
     }
 
     @Test(priority = 4)
-    public void bearerTokenAuthentication() {
-        String bearerToken = "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";
+    public void bearerTokenAuthentication() throws IOException {
+        String bearerToken = FileReader.readPropertiesFile(OPEN_WEATHER_MAP_API_KEY_PATH).getProperty("openWeatherMapApiKey");
         given()
                 .header("Authorization", "Bearer " + bearerToken)
                 .when()

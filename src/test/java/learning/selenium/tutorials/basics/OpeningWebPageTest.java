@@ -9,7 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static learning.selenium.constants.SeleniumProperties.*;
+import static learning.constants.SeleniumProperties.*;
 
 public class OpeningWebPageTest {
     private WebDriver driver;

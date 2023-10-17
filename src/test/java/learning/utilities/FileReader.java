@@ -1,4 +1,4 @@
-package learning.selenium.utilities;
+package learning.utilities;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
