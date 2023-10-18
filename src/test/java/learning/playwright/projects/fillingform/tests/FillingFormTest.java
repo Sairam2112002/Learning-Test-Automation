@@ -1,4 +1,4 @@
-package learning.playwright.projects.fillingform;
+package learning.playwright.projects.fillingform.tests;
 
 import com.microsoft.playwright.*;
 import learning.playwright.projects.fillingform.pages.FormPage;
@@ -9,9 +9,9 @@ import org.testng.annotations.Test;
 import java.nio.file.Paths;
 
 public class FillingFormTest {
-    protected Playwright playwright;
-    protected Browser browser;
-    protected Page page;
+    protected static Playwright playwright;
+    protected static Browser browser;
+    protected static Page page;
     protected FormPage formPage;
 
     @BeforeClass
