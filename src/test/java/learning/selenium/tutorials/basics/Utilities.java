@@ -1,7 +1,7 @@
 package learning.selenium.tutorials.basics;
 
-import learning.driverfactory.Driver;
-import learning.driverfactory.DriverFactory;
+import learning.utilities.driverfactory.Driver;
+import learning.utilities.driverfactory.DriverFactory;
 import learning.selenium.exceptions.BrowserNotFoundException;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;

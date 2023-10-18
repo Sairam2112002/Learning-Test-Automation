@@ -1,4 +1,4 @@
-package learning.driverfactory;
+package learning.utilities.driverfactory;
 
 import org.openqa.selenium.WebDriver;
 

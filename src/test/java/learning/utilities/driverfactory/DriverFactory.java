@@ -1,7 +1,7 @@
-package learning.driverfactory;
+package learning.utilities.driverfactory;
 
-import learning.driverfactory.drivers.MyChromeDriver;
-import learning.driverfactory.drivers.MyEdgeDriver;
+import learning.utilities.driverfactory.drivers.MyChromeDriver;
+import learning.utilities.driverfactory.drivers.MyEdgeDriver;
 import learning.selenium.exceptions.BrowserNotFoundException;
 import learning.utilities.FileReader;
 

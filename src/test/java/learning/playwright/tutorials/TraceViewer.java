@@ -4,15 +4,19 @@ import com.microsoft.playwright.*;
 
 import java.nio.file.Paths;
 
-// By default, setHeadless will be true, we can set that explicitly to false
-
-public class PlaywrightBasic {
+public class TraceViewer {
     public static void main(String[] args) {
         try (Playwright playwright = Playwright.create()) {
-            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions()
-                    .setHeadless(false));
+            Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
             BrowserContext context = browser.newContext();
             Page page = context.newPage();
+
+            // Start tracing
+            context.tracing().start(new Tracing.StartOptions()
+                    .setScreenshots(true)
+                    .setSnapshots(true)
+                    .setSources(true));
+
             page.navigate("https://sairam2112002.github.io/survey-form/");
             page.getByPlaceholder("Enter yor name").click();
             page.getByPlaceholder("Enter yor name").fill("Harry Potter");
@@ -25,7 +29,10 @@ public class PlaywrightBasic {
             page.locator("input:nth-child(18)").check();
             page.getByPlaceholder("Enter your comment here...").click();
             page.getByPlaceholder("Enter your comment here...").fill("FreeCodeCamp is a great place to learn");
-            page.screenshot(new Page.ScreenshotOptions().setPath(Paths.get("Screenshots\\example.png")));
+
+            // Stop tracing and export it into a zip archive
+            context.tracing().stop(new Tracing.StopOptions().setPath(Paths.get("Traces\\trace.zip")));
+            context.close();
         }
     }
 }

@@ -1,7 +1,7 @@
-package learning.driverfactory.drivers;
+package learning.utilities.driverfactory.drivers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import learning.driverfactory.Driver;
+import learning.utilities.driverfactory.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;

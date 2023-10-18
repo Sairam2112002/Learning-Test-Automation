@@ -5,8 +5,8 @@ import io.cucumber.java.Before;
 import io.restassured.response.Response;
 import learning.cucumberSelenium.bookstoreproject.pagesUserValidation.BookStoreHomePage;
 import learning.cucumberSelenium.bookstoreproject.pagesUserValidation.BookStoreUserPage;
-import learning.driverfactory.Driver;
-import learning.driverfactory.DriverFactory;
+import learning.utilities.driverfactory.Driver;
+import learning.utilities.driverfactory.DriverFactory;
 import learning.selenium.exceptions.BrowserNotFoundException;
 import org.openqa.selenium.WebDriver;
 
