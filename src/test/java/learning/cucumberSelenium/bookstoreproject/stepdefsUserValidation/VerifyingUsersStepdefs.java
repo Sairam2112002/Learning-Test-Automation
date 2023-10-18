@@ -1,4 +1,4 @@
-package learning.cucumberSelenium.bookstoreproject.stepdefs.userValidation;
+package learning.cucumberSelenium.bookstoreproject.stepdefsUserValidation;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
@@ -7,6 +7,12 @@ import io.cucumber.java.en.When;
 import org.testng.Assert;
 
 public class VerifyingUsersStepdefs {
+    private final ContainerUser container;
+
+    public VerifyingUsersStepdefs(ContainerUser container) {
+        this.container = container;
+    }
+
     // Scenario: validating the created user by logging in
     @Given("user opens the book store website")
     public void userOpensTheBookStoreWebsite() {

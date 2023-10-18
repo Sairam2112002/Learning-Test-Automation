@@ -1,4 +1,4 @@
-package learning.cucumberSelenium.bookstoreproject.stepdefs.userValidation;
+package learning.cucumberSelenium.bookstoreproject.stepdefsUserValidation;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;

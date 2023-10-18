@@ -1,10 +1,10 @@
-package learning.cucumberSelenium.bookstoreproject.stepdefs.userValidation;
+package learning.cucumberSelenium.bookstoreproject.stepdefsUserValidation;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.restassured.response.Response;
-import learning.cucumberSelenium.bookstoreproject.pages.userValidation.BookStoreHomePage;
-import learning.cucumberSelenium.bookstoreproject.pages.userValidation.BookStoreUserPage;
+import learning.cucumberSelenium.bookstoreproject.pagesUserValidation.BookStoreHomePage;
+import learning.cucumberSelenium.bookstoreproject.pagesUserValidation.BookStoreUserPage;
 import learning.driverfactory.Driver;
 import learning.driverfactory.DriverFactory;
 import learning.selenium.exceptions.BrowserNotFoundException;

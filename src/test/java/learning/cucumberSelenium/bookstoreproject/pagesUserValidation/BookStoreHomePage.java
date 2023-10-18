@@ -1,4 +1,4 @@
-package learning.cucumberSelenium.bookstoreproject.pages.userValidation;
+package learning.cucumberSelenium.bookstoreproject.pagesUserValidation;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
