@@ -6,10 +6,9 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 import static io.restassured.RestAssured.given;
-import static learning.constants.SeleniumProperties.BROWSER_PROPERTIES_PATH;
 import static org.hamcrest.Matchers.equalTo;
 
-import static learning.constants.APIKeysPath.OPEN_WEATHER_MAP_API_KEY_PATH;
+import static learning.restassured.APIKeysPath.OPEN_WEATHER_MAP_API_KEY_PATH;
 
 public class AuthenticationsTest {
     @Test(priority = 1)

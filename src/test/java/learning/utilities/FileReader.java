@@ -1,26 +1,28 @@
 package learning.utilities;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
 public class FileReader {
     public static Properties readPropertiesFile(String fileName) throws IOException {
-        FileInputStream fis = null;
-        Properties prop = null;
+        FileInputStream fileInputStream = null;
+        Properties properties = null;
         try {
-            fis = new FileInputStream(fileName);
-            prop = new Properties();
-            prop.load(fis);
-        } catch(FileNotFoundException fnfe) {
-            fnfe.printStackTrace();
-        } catch(IOException ioe) {
-            ioe.printStackTrace();
+            fileInputStream = new FileInputStream(fileName);
+            properties = new Properties();
+            properties.load(fileInputStream);
+
+        // FileNotFoundException will be raised if the file is not found
+        // As FileNotFoundException is a child class of IOException, we can catch IOException
+
+        } catch(IOException ioException) {
+            ioException.printStackTrace();
         } finally {
-            fis.close();
+            assert fileInputStream != null;
+            fileInputStream.close();
         }
-        return prop;
+        return properties;
     }
 }
 
