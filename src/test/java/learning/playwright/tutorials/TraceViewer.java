@@ -8,11 +8,11 @@ public class TraceViewer {
     public static void main(String[] args) {
         try (Playwright playwright = Playwright.create()) {
             Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
-            BrowserContext context = browser.newContext();
-            Page page = context.newPage();
+            BrowserContext browserContext = browser.newContext();
+            Page page = browserContext.newPage();
 
             // Start tracing
-            context.tracing().start(new Tracing.StartOptions()
+            browserContext.tracing().start(new Tracing.StartOptions()
                     .setScreenshots(true)
                     .setSnapshots(true)
                     .setSources(true));
@@ -31,8 +31,8 @@ public class TraceViewer {
             page.getByPlaceholder("Enter your comment here...").fill("FreeCodeCamp is a great place to learn");
 
             // Stop tracing and export it into a zip archive
-            context.tracing().stop(new Tracing.StopOptions().setPath(Paths.get("Traces\\trace.zip")));
-            context.close();
+            browserContext.tracing().stop(new Tracing.StopOptions().setPath(Paths.get("Traces\\trace.zip")));
+            browserContext.close();
         }
     }
 }

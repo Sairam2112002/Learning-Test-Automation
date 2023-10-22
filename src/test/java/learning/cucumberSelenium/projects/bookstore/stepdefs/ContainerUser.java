@@ -1,13 +1,13 @@
-package learning.cucumberSelenium.projects.bookstore.stepdefsUserValidation;
+package learning.cucumberSelenium.projects.bookstore.stepdefs;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.restassured.response.Response;
-import learning.cucumberSelenium.projects.bookstore.pagesUserValidation.BookStoreHomePage;
-import learning.cucumberSelenium.projects.bookstore.pagesUserValidation.BookStoreUserPage;
+import learning.cucumberSelenium.projects.bookstore.pages.BookStoreHomePage;
+import learning.cucumberSelenium.projects.bookstore.pages.BookStoreUserPage;
+import learning.selenium.exceptions.DriverNotFoundException;
 import learning.utilities.driverfactoryselenium.Driver;
 import learning.utilities.driverfactoryselenium.DriverFactory;
-import learning.selenium.exceptions.BrowserNotFoundException;
 import org.openqa.selenium.WebDriver;
 
 import java.io.IOException;
@@ -22,7 +22,7 @@ public class ContainerUser {
     protected static String createdPassword;
 
     @Before("@userValidation")
-    public static void setUp() throws BrowserNotFoundException, IOException {
+    public static void setUp() throws IOException, DriverNotFoundException {
         Driver browserType = DriverFactory.createDriver();
         driver = browserType.getDriver();
         driver.manage().window().maximize();

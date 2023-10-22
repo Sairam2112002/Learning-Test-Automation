@@ -1,11 +1,11 @@
-package learning.cucumberSelenium.projects.bookstore.pagesUserValidation;
+package learning.cucumberSelenium.projects.bookstore.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static learning.cucumberSelenium.ui.UIConstants.*;
+import static learning.cucumberSelenium.bookstore.URIs.BOOK_STORE_HOME_PAGE;
 
 public class BookStoreHomePage {
     private final WebDriver driver;
