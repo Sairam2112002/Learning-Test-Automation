@@ -10,7 +10,7 @@ public class RecordingVideo {
         Playwright playwright = Playwright.create();
         Browser browser = playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
         BrowserContext browserContext = browser.newContext(new Browser.NewContextOptions()
-                .setRecordVideoDir(Paths.get("VideoRecordings\\")));
+                .setRecordVideoDir(Paths.get("Utilities\\VideoRecordings\\")));
         Page page = browserContext.newPage();
 
         page.navigate("https://www.orangehrm.com/");

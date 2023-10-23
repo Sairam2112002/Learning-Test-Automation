@@ -31,7 +31,7 @@ public class TraceViewer {
             page.getByPlaceholder("Enter your comment here...").fill("FreeCodeCamp is a great place to learn");
 
             // Stop tracing and export it into a zip archive
-            browserContext.tracing().stop(new Tracing.StopOptions().setPath(Paths.get("Traces\\trace.zip")));
+            browserContext.tracing().stop(new Tracing.StopOptions().setPath(Paths.get("Utilities\\Traces\\trace.zip")));
             browserContext.close();
         }
     }

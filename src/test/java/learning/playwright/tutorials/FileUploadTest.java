@@ -49,7 +49,7 @@ public class FileUploadTest {
     @Test(priority = 1)
     public void uploadSingleFile() {
         page.navigate("https://the-internet.herokuapp.com/upload");
-        page.setInputFiles("#file-upload", Paths.get("SampleFilesToUpload\\example1.txt"));
+        page.setInputFiles("#file-upload", Paths.get("Utilities\\SampleFilesToUpload\\example1.txt"));
         page.locator("#file-submit").click();
 
         System.out.println("Uploading a Single File:");
@@ -62,10 +62,10 @@ public class FileUploadTest {
     @Test(priority = 2)
     public void uploadMultipleFiles() {
         page.navigate("https://davidwalsh.name/demo/multiple-file-upload.php");
-        Path[] filePathsToUpload = {Paths.get("SampleFilesToUpload\\example1.txt"),
-                                    Paths.get("SampleFilesToUpload\\example2.txt"),
-                                    Paths.get("SampleFilesToUpload\\example3.txt"),
-                                    Paths.get("SampleFilesToUpload\\example4.txt")};
+        Path[] filePathsToUpload = {Paths.get("Utilities\\SampleFilesToUpload\\example1.txt"),
+                                    Paths.get("Utilities\\SampleFilesToUpload\\example2.txt"),
+                                    Paths.get("Utilities\\SampleFilesToUpload\\example3.txt"),
+                                    Paths.get("Utilities\\SampleFilesToUpload\\example4.txt")};
         page.setInputFiles("#filesToUpload", filePathsToUpload);
         Locator uploadedFiles = page.locator("#main>.demo-wrapper>ul>li");
         List<String> uploadedFilesNames = uploadedFiles.allTextContents();
