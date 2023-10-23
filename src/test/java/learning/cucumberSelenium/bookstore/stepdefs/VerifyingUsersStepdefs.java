@@ -1,4 +1,4 @@
-package learning.cucumberSelenium.projects.bookstore.stepdefs;
+package learning.cucumberSelenium.bookstore.stepdefs;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;

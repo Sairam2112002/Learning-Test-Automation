@@ -1,4 +1,4 @@
-package learning.cucumberPlaywright.projects.fillingform.stepdefs;
+package learning.cucumberPlaywright.fillingform.stepdefs;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;

@@ -1,4 +1,4 @@
-package learning.cucumberSelenium.projects.bookstore.pages;
+package learning.cucumberSelenium.bookstore.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

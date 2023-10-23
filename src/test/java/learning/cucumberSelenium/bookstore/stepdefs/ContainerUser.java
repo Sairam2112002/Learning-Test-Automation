@@ -1,10 +1,10 @@
-package learning.cucumberSelenium.projects.bookstore.stepdefs;
+package learning.cucumberSelenium.bookstore.stepdefs;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.restassured.response.Response;
-import learning.cucumberSelenium.projects.bookstore.pages.BookStoreHomePage;
-import learning.cucumberSelenium.projects.bookstore.pages.BookStoreUserPage;
+import learning.cucumberSelenium.bookstore.pages.BookStoreHomePage;
+import learning.cucumberSelenium.bookstore.pages.BookStoreUserPage;
 import learning.selenium.exceptions.DriverNotFoundException;
 import learning.utilities.driverfactoryselenium.Driver;
 import learning.utilities.driverfactoryselenium.DriverFactory;

@@ -1,4 +1,4 @@
-package learning.cucumberPlaywright.projects.fillingform.pages;
+package learning.cucumberPlaywright.fillingform.pages;
 
 import com.microsoft.playwright.Page;
 
