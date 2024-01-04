@@ -1,5 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite - 1">
+    <!--  Parameters can also be defined at "test" and "class" levels  -->
     <parameter name="first-name" value="Harry"/>
     <parameter name="last-name" value="Potter"/>
     <parameter name="gender" value="male"/>

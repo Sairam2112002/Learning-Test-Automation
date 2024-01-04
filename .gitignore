@@ -4,6 +4,7 @@
 
 ### IntelliJ IDEA ###
 .idea/
+Automation-Artifacts/
 *.iws
 *.iml
 *.ipr

@@ -2,15 +2,27 @@
     <Properties>
         <Property name="layout">%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Property>
     </Properties>
+
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="${layout}" />
         </Console>
+
+        <!--    append = true -> to append new logs into the file everytime test is run
+                append = false -> to replace the logs everytime test is run    -->
+        <File name="File" fileName="Automation-Artifacts/Logs/logs.log" append="true">
+            <PatternLayout>
+                <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+        </File>
     </Appenders>
 
     <Loggers>
         <Root level="trace">
-            <AppenderRef ref="Console" />
+            <!--      ref = Console Appender name -> to log into console
+                      ref = File Appender name -> to log into file  -->
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
         </Root>
     </Loggers>
 </Configuration>
