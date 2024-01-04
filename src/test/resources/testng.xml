@@ -71,9 +71,36 @@
         </classes>
     </test>
 
-    <test name="Test - 3 - Parameters - 1 - ">
+    <!--  Using @Parameter and @Optional Tags in the Test Class and <Parameters> are added in testng.xml  -->
+    <test name="Test - 3 - Parameters - 1 - @Parameter and @Optional Tags">
         <classes>
             <class name="learning.testng.ParametersTest"/>
+        </classes>
+    </test>
+
+    <!--  Data provider created and used in the same Class  -->
+    <test name="Test - 4 - Data Providers - 1 - In same Class">
+        <groups>
+            <run>
+                <include name="group.car"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="learning.testng.DataProviderTest"/>
+        </classes>
+    </test>
+
+    <!--  Data provider created in one Class and used in a different Class  -->
+    <test name="Test - 4 - Data Providers - 2 - In different Class">
+        <groups>
+            <run>
+                <include name="group.aircraft"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="learning.testng.DataProviderTest"/>
         </classes>
     </test>
 </suite>
