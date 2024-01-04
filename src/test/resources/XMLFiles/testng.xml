@@ -5,4 +5,30 @@
             <class name="learning.testng.TestNGBasic"/>
         </classes>
     </test>
+
+    <test name="Test - Groups - 1">
+        <groups>
+            <run>
+                <include name="group.1"/>
+                <include name="group.2"/>
+                <exclude name="group.3"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="learning.testng.GroupsTest"/>
+        </classes>
+    </test>
+
+    <test name="Test - Groups - 2">
+        <groups>
+            <run>
+                <include name="group.*"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="learning.testng.GroupsTest"/>
+        </classes>
+    </test>
 </suite>
