@@ -4,7 +4,10 @@ target/
 !**/src/test/**/target/
 
 ### IntelliJ IDEA ###
-*.idea
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
 *.iws
 *.iml
 *.ipr
@@ -34,3 +37,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+/target/
+/.idea/
