@@ -6,23 +6,24 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.asserts.SoftAssert;
 
 public class SeleniumBase {
     protected static WebDriver driver;
+    protected static SoftAssert softAssert;
     protected static Select select;
 
     @BeforeClass
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        softAssert = new SoftAssert();
         driver.manage().window().maximize();
-
-        SeleniumAssertion.initializeSoftAssertions();
     }
 
     @AfterClass
     public void tearDown() {
         driver.quit();
-        SeleniumAssertion.assertAll();
+        softAssert.assertAll();
     }
 }
