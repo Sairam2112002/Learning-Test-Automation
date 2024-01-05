@@ -103,4 +103,11 @@
             <class name="learning.testng.DataProviderTest"/>
         </classes>
     </test>
+
+    <!--  @Ignore annotation to ignore a method or even a Class  -->
+    <test name="Test - 5 - Ignoring - 1 - Ignoring methods">
+        <classes>
+            <class name="learning.testng.IgnoringTest"/>
+        </classes>
+    </test>
 </suite>
