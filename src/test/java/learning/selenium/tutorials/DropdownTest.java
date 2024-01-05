@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+import static learning.selenium.tutorials.SeleniumAssertion.softAssertions;
+
 public class DropdownTest extends SeleniumBase{
     private final By pageTitle = By.cssSelector("#content>div>h3");
     private final By dropdown =  By.cssSelector("#content #dropdown");
@@ -13,20 +15,20 @@ public class DropdownTest extends SeleniumBase{
     @Test(priority = 1)
     public void openBaseUri() {
         driver.get("https://the-internet.herokuapp.com/dropdown");
-        softAssert.assertEquals(driver.findElement(pageTitle).getText(), "Dropdown List");
+        softAssertions.assertThat(driver.findElement(pageTitle).getText()).isEqualTo("Dropdown List");
     }
 
     @Test(priority = 2)
     public void selectOption1FromDropdown() {
         select = new Select(driver.findElement(dropdown));
         select.selectByValue("1");
-        softAssert.assertFalse(driver.findElement(dropdownOption1).getAttribute("selected").isEmpty());
+        softAssertions.assertThat(driver.findElement(dropdownOption1).getAttribute("selected").isEmpty()).isFalse();
     }
 
     @Test(priority = 3)
     public void selectOption2FromDropdown() {
         select = new Select(driver.findElement(dropdown));
         select.selectByValue("2");
-        softAssert.assertFalse(driver.findElement(dropdownOption2).getAttribute("selected").isEmpty());
+        softAssertions.assertThat(driver.findElement(dropdownOption2).getAttribute("selected").isEmpty()).isFalse();
     }
 }
