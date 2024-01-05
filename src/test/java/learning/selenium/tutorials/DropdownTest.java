@@ -13,20 +13,20 @@ public class DropdownTest extends SeleniumBase{
     @Test(priority = 1)
     public void openBaseUri() {
         driver.get("https://the-internet.herokuapp.com/dropdown");
-        softAssertions.assertThat(driver.findElement(pageTitle).getText()).isEqualTo("Dropdown List");
+        softAssert.assertEquals(driver.findElement(pageTitle).getText(), "Dropdown List");
     }
 
     @Test(priority = 2)
     public void selectOption1FromDropdown() {
         select = new Select(driver.findElement(dropdown));
         select.selectByValue("1");
-        softAssertions.assertThat(driver.findElement(dropdownOption1).getAttribute("selected").isEmpty()).isFalse();
+        softAssert.assertFalse(driver.findElement(dropdownOption1).getAttribute("selected").isEmpty());
     }
 
     @Test(priority = 3)
     public void selectOption2FromDropdown() {
         select = new Select(driver.findElement(dropdown));
         select.selectByValue("2");
-        softAssertions.assertThat(driver.findElement(dropdownOption2).getAttribute("selected").isEmpty()).isFalse();
+        softAssert.assertFalse(driver.findElement(dropdownOption2).getAttribute("selected").isEmpty());
     }
 }
