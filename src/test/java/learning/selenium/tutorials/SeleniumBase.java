@@ -2,6 +2,7 @@ package learning.selenium.tutorials;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.assertj.core.api.SoftAssertions;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -14,6 +15,7 @@ public class SeleniumBase {
     protected static WebDriver driver;
     protected static Select select;
     protected static Actions actions;
+    protected static Alert alert;
 
     @BeforeTest
     public void setUp() {
