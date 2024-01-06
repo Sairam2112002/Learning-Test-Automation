@@ -10,12 +10,15 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
+import java.util.List;
+
 public class SeleniumBase {
     protected static SoftAssertions softAssertions;
     protected static WebDriver driver;
     protected static Select select;
     protected static Actions actions;
     protected static Alert alert;
+    protected static List<String> windowHandles;
 
     @BeforeTest
     public void setUp() {
