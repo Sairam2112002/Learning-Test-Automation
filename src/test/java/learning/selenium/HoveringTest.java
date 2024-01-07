@@ -1,4 +1,4 @@
-package learning.selenium.tutorials;
+package learning.selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.Actions;

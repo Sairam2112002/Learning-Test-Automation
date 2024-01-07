@@ -1,4 +1,4 @@
-package learning.selenium.tutorials;
+package learning.selenium;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

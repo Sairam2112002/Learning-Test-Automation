@@ -1,4 +1,4 @@
-package learning.selenium.tutorials;
+package learning.selenium;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.assertj.core.api.SoftAssertions;
