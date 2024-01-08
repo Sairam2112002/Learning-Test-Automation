@@ -1,4 +1,4 @@
-package learning.cucumberselenium.setup.drivers;
+package learning.cucumberselenium.general.setup.drivers;
 
 import org.openqa.selenium.WebDriver;
 

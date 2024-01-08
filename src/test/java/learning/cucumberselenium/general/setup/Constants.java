@@ -1,4 +1,4 @@
-package learning.cucumberselenium.setup;
+package learning.cucumberselenium.general.setup;
 
 import lombok.Getter;
 import lombok.Setter;

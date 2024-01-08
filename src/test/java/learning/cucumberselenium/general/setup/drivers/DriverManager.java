@@ -1,6 +1,6 @@
-package learning.cucumberselenium.setup.drivers;
+package learning.cucumberselenium.general.setup.drivers;
 
-import learning.cucumberselenium.setup.Constants;
+import learning.cucumberselenium.general.setup.Constants;
 import org.openqa.selenium.WebDriver;
 
 public class DriverManager {

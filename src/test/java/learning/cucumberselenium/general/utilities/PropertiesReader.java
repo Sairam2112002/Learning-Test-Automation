@@ -1,13 +1,13 @@
-package learning.cucumberselenium.utilities;
+package learning.cucumberselenium.general.utilities;
 
-import learning.cucumberselenium.setup.Constants;
+import learning.cucumberselenium.general.setup.Constants;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Properties;
 
-import static learning.cucumberselenium.setup.Constants.ENVIRONMENT_PROPERTIES_PATH;
+import static learning.cucumberselenium.general.setup.Constants.ENVIRONMENT_PROPERTIES_PATH;
 
 public class PropertiesReader {
     public static void readProperties() {
