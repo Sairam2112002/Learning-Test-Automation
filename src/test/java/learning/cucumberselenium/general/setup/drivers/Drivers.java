@@ -3,5 +3,5 @@ package learning.cucumberselenium.general.setup.drivers;
 import org.openqa.selenium.WebDriver;
 
 public interface Drivers {
-    WebDriver createDriver();
+    WebDriver createDriver(boolean isHeadless);
 }
