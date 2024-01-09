@@ -83,14 +83,6 @@
       <scope>provided</scope>
     </dependency>
 
-    <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.30</version>
-      <scope>provided</scope>
-    </dependency>
-
     <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-expressions -->
     <dependency>
       <groupId>io.cucumber</groupId>
@@ -107,7 +99,7 @@
         <version>3.0.0-M6</version>
         <configuration>
           <includes>
-            <include>**/ClassName.java</include>
+            <include>**/NOPCommerceSeleniumTestRunner.java</include>
           </includes>
         </configuration>
       </plugin>
