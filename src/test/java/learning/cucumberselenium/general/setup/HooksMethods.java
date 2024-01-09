@@ -3,9 +3,6 @@ package learning.cucumberselenium.general.setup;
 import io.cucumber.java.Scenario;
 import learning.cucumberselenium.general.setup.drivers.DriverManager;
 import learning.cucumberselenium.general.utilities.PropertiesReader;
-import lombok.Getter;
-import lombok.Setter;
-import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -13,36 +10,26 @@ import org.openqa.selenium.WebDriver;
 import static learning.cucumberselenium.general.setup.Constants.*;
 
 public class HooksMethods {
-    public static SoftAssertions softAssertions;
-    public static WebDriver driver;
-
-    @Getter @Setter
-    private static Scenario currentScenario;
-
-    public void beforeMethod(Scenario scenario) {
+    public void readProperties() {
         PropertiesReader.readProperties();
-        softAssertions = new SoftAssertions();
-
-        DriverManager.setDriver(isHeadless());
-        driver = DriverManager.tlDriver.get();
-
-        setCurrentScenario(scenario);
     }
 
-    public void afterMethod(Scenario scenario) {
+    public WebDriver getWebDriver() {
+        DriverManager.setDriver(isHeadless());
+        return DriverManager.tlDriver.get();
+    }
+
+    public void takeScreenshot(Scenario scenario, WebDriver driver) {
         if(isCaptureScreenshotsForFailedScenarios()) {
             if(scenario.isFailed()) {
-                takeScreenshot(scenario);
+                attachScreenshot(scenario, driver);
             }
         } else if(isCaptureScreenshots()) {
-            takeScreenshot(scenario);
+            attachScreenshot(scenario, driver);
         }
-
-        driver.quit();
-        softAssertions.assertAll();
     }
 
-    private void takeScreenshot(Scenario scenario) {
+    private void attachScreenshot(Scenario scenario, WebDriver driver) {
         final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
         scenario.attach(screenshot, "image/png", scenario.getName());
     }
