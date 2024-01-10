@@ -15,6 +15,7 @@ public class LandingPageStepDefinitions {
 
     @Given("I navigate to NOP Commerce Landing Page")
     public void iNavigateToNopCommerceLandingPage() {
+        pageContext.setCurrentPage(pageContext.getLandingPage());
         pageContext.getLandingPage().navigateToNopCommerce();
     }
 
@@ -26,6 +27,6 @@ public class LandingPageStepDefinitions {
     @Then("below description must be displayed for landing page")
     public void belowDescriptionMustBeDisplayedForString(DataTable dataTable) {
         String description = dataTable.row(0).get(0);
-        pageContext.getLandingPage().verifyDescription(description);
+        pageContext.getLandingPage().verifyLandingPageTitleDescription(description);
     }
 }

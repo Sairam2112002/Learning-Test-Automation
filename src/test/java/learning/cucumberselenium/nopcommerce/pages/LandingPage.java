@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static learning.cucumberselenium.nopcommerce.stepdefinitions.HooksNOPCommerceSelenium.*;
@@ -19,6 +20,13 @@ public class LandingPage extends BasePage{
         landingPageLinks = new HashMap<>();
         landingPageLinks.put("Landing Page Title", By.cssSelector(".page-title>h1"));
         landingPageLinks.put("Landing Page description", By.cssSelector(".main-sub-title>p"));
+
+        commonLinks.put("Showcase", By.cssSelector(".stats-1"));
+        commonLinks.put("Case studies", By.cssSelector(".stats-2"));
+        commonLinks.put("All features", By.cssSelector(".stats-3"));
+        commonLinks.put("Showcase link", By.cssSelector(".stats-1>a"));
+        commonLinks.put("Case studies link", By.cssSelector(".stats-2>a"));
+        commonLinks.put("All features link", By.cssSelector(".stats-3>a"));
     }
 
     public void navigateToNopCommerce() {
@@ -29,7 +37,7 @@ public class LandingPage extends BasePage{
         softAssertions.assertThat(getText(driver.findElement(landingPageLinks.get("Landing Page Title")))).isEqualTo("nopCommerce Store Demo");
     }
 
-    public void verifyDescription(String description) {
+    public void verifyLandingPageTitleDescription(String description) {
         softAssertions.assertThat(getText(driver.findElement(landingPageLinks.get("Landing Page description")))).isEqualTo(description);
     }
 }
