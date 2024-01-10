@@ -15,8 +15,6 @@ import static learning.cucumberselenium.nopcommerce.stepdefinitions.HooksNOPComm
 public class BasePage extends WebActionImplementations implements WebPage {
     public final WebDriver driver;
 
-    public static List<String> windowHandles;
-
     public Map<String, By> commonLinks;
 
     @Override
@@ -38,9 +36,7 @@ public class BasePage extends WebActionImplementations implements WebPage {
 
     public void clickLinkOnCurrentPageToOpenInNewTab(String linkText) {
         openLinkInNewTab(driver, driver.findElement(commonLinks.get(linkText + " link")));
-
-        windowHandles = new ArrayList<>(driver.getWindowHandles());
-        switchToNewlyOpenedTab(driver, windowHandles);
+        switchToNewlyOpenedTab(driver);
     }
 
     public void validateUrlInNewTab(String link) {
