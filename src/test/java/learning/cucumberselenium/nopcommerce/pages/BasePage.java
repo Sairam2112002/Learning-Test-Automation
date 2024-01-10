@@ -45,5 +45,6 @@ public class BasePage extends WebActionImplementations implements WebPage {
 
     public void validateUrlInNewTab(String link) {
         softAssertions.assertThat(driver.getCurrentUrl()).isEqualTo(link);
+        System.out.println("Added a sout statement");
     }
 }
