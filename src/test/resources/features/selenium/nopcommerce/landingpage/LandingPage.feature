@@ -19,9 +19,17 @@ Feature: Verify the elements on NOP Commerce landing page
     Given I am on NOP Commerce Landing Page
     And I click "<Link Text>" link in new tab
     Then the corresponding "<Page Link>" url should be displayed
-    @check
+
     Examples:
     | Link Text    | Page Link                                   |
     | Showcase     | https://www.nopcommerce.com/en/showcase     |
     | Case studies | https://www.nopcommerce.com/en/case-studies |
     | All features | https://www.nopcommerce.com/en/features     |
+    
+  Scenario: Validate the visibility of available navigation sections in landing page
+    Given I am on NOP Commerce Landing Page
+    Then below elements must be visible
+      | Product            |
+      | Downloads          |
+      | Support & services |
+      | Partners           |

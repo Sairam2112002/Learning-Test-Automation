@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import static learning.cucumberselenium.nopcommerce.stepdefinitions.HooksNOPCommerceSelenium.*;
@@ -27,6 +26,10 @@ public class LandingPage extends BasePage{
         commonLinks.put("Showcase link", By.cssSelector(".stats-1>a"));
         commonLinks.put("Case studies link", By.cssSelector(".stats-2>a"));
         commonLinks.put("All features link", By.cssSelector(".stats-3>a"));
+        commonLinks.put("Product", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[1]/span"));
+        commonLinks.put("Downloads", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[2]/span"));
+        commonLinks.put("Support & services", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[3]/span"));
+        commonLinks.put("Partners", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[4]/a/span"));
     }
 
     public void navigateToNopCommerce() {
