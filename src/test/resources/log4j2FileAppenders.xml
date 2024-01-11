@@ -44,7 +44,8 @@
 
         Example: <OnStartupTriggeringPolicy />
 
-        4. CronTriggeringPolicy: This policy causes a rollover based on a cron expression. The 'schedule' attribute is used to specify the cron expression.
+        4. CronTriggeringPolicy: This policy causes a rollover based on a cron expression.
+           The 'schedule' attribute is used to specify the cron expression.
 
         Example: <CronTriggeringPolicy schedule="0 0 0 * * ?"/> (Rollover everyday at midnight)
 
