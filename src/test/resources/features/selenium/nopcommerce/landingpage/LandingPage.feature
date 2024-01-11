@@ -50,7 +50,7 @@ Feature: Verify the elements on NOP Commerce landing page
     And I click "Partners" link in new tab
     Then the corresponding "https://www.nopcommerce.com/en/partners" url should be displayed
 
-  Scenario: Validate the visibility of available options in "" in "" navigation section in landing page
+  Scenario: Validate the visibility of available options in "Industries" option in "Product" navigation section in landing page
     Given I am on NOP Commerce Landing Page
     When I hover on "Product" element
     And I hover on "Industries" element
