@@ -31,13 +31,13 @@ public class CommonStepDefinitions {
         pageContext.getCurrentPage().validateUrlInNewTab(link);
     }
 
-    @When("I hover on {string} element in landing page")
-    public void iHoverOnSectionInLandingPage(String sectionName) {
+    @When("I hover on {string} element")
+    public void iHoverOnElement(String sectionName) {
         pageContext.getCurrentPage().hoverOnSection(sectionName);
     }
 
     @Then("the options {string} should be displayed")
-    public void theOptionsShouldBeDisplayedForTheSection(String optionsAsString) {
+    public void theOptionsShouldBeDisplayed(String optionsAsString) {
         pageContext.getCurrentPage().verifyOptionsAreDisplayedForTheSection(optionsAsString);
     }
 }

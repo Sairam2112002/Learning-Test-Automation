@@ -34,9 +34,9 @@ Feature: Verify the elements on NOP Commerce landing page
       | Support & services |
       | Partners           |
 
-  Scenario Outline: Validate the visibility of available options when hovered on "<Section name>" navigation section in landing page
+  Scenario Outline: Validate the visibility of available options in "<Section name>" navigation section in landing page
     Given I am on NOP Commerce Landing Page
-    When I hover on "<Section name>" element in landing page
+    When I hover on "<Section name>" element
     Then the options "<Options>" should be displayed
 
     Examples:
@@ -44,4 +44,15 @@ Feature: Verify the elements on NOP Commerce landing page
     | Product            | Store demo,Showcase Option,Features,Why for developers,Why for store owners,Industries            |
     | Downloads          | Download nopCommerce,Marketplace,Translations,Copyright removal key,Mobile application,Web API    |
     | Support & services | Training,Documentation,Community forums,Premium support services,Request a quote,Contact us       |
+
+  Scenario: Validate the functionality of "Partners" navigation section in landing page
+    Given I am on NOP Commerce Landing Page
+    And I click "Partners" link in new tab
+    Then the corresponding "https://www.nopcommerce.com/en/partners" url should be displayed
+
+  Scenario: Validate the visibility of available options in "" in "" navigation section in landing page
+    Given I am on NOP Commerce Landing Page
+    When I hover on "Product" element
+    And I hover on "Industries" element
+    Then the options "Fashion,Health & Beauty,Food & Beverage,Automotive,Industrial & Scientific,Furniture,B2B eCommerce,International" should be displayed
     
