@@ -33,3 +33,15 @@ Feature: Verify the elements on NOP Commerce landing page
       | Downloads          |
       | Support & services |
       | Partners           |
+
+  Scenario Outline: Validate the visibility of available options when hovered on "<Section name>" navigation section in landing page
+    Given I am on NOP Commerce Landing Page
+    When I hover on "<Section name>" element in landing page
+    Then the options "<Options>" should be displayed
+
+    Examples:
+    | Section name       | Options                                                                                           |
+    | Product            | Store demo,Showcase Option,Features,Why for developers,Why for store owners,Industries            |
+    | Downloads          | Download nopCommerce,Marketplace,Translations,Copyright removal key,Mobile application,Web API    |
+    | Support & services | Training,Documentation,Community forums,Premium support services,Request a quote,Contact us       |
+    

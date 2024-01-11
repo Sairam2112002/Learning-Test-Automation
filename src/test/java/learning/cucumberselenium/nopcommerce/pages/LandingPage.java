@@ -12,6 +12,7 @@ public class LandingPage extends BasePage{
     private static final String NOP_COMMERCE_URL = "https://www.nopcommerce.com/en/demo";
 
     public Map<String, By> landingPageLinks;
+    public Map<String, By> navigationSectionOptions;
 
     public LandingPage(WebDriver driver) {
         super(driver);
@@ -30,6 +31,24 @@ public class LandingPage extends BasePage{
         commonLinks.put("Downloads", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[2]/span"));
         commonLinks.put("Support & services", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[3]/span"));
         commonLinks.put("Partners", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[4]/a/span"));
+        commonLinks.put("Store demo", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[1]/ul/li[1]/a/span"));
+        commonLinks.put("Showcase Option", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[1]/ul/li[2]/a/span"));
+        commonLinks.put("Features", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[1]/ul/li[3]/a/span"));
+        commonLinks.put("Why for developers", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[1]/ul/li[4]/a/span"));
+        commonLinks.put("Why for store owners", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[1]/ul/li[5]/a/span"));
+        commonLinks.put("Industries", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[1]/ul/li[6]/span"));
+        commonLinks.put("Download nopCommerce", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[2]/ul/li[1]/a/span"));
+        commonLinks.put("Marketplace", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[2]/ul/li[2]/a/span"));
+        commonLinks.put("Translations", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[2]/ul/li[3]/a/span"));
+        commonLinks.put("Copyright removal key", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[2]/ul/li[4]/a/span"));
+        commonLinks.put("Mobile application", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[2]/ul/li[5]/a/span"));
+        commonLinks.put("Web API", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[2]/ul/li[6]/a/span"));
+        commonLinks.put("Training", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[3]/ul/li[1]/a/span"));
+        commonLinks.put("Documentation", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[3]/ul/li[2]/a/span"));
+        commonLinks.put("Community forums", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[3]/ul/li[3]/a/span"));
+        commonLinks.put("Premium support services", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[3]/ul/li[4]/a/span"));
+        commonLinks.put("Request a quote", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[3]/ul/li[5]/a/span"));
+        commonLinks.put("Contact us", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[3]/ul/li[6]/a/span"));
     }
 
     public void navigateToNopCommerce() {

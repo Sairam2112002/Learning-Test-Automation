@@ -25,7 +25,7 @@ public class LandingPageStepDefinitions {
     }
 
     @Then("below description must be displayed for landing page")
-    public void belowDescriptionMustBeDisplayedForString(DataTable dataTable) {
+    public void belowDescriptionMustBeDisplayedForLandingPage(DataTable dataTable) {
         String description = dataTable.row(0).get(0);
         pageContext.getLandingPage().verifyLandingPageTitleDescription(description);
     }
