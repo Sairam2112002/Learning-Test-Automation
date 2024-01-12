@@ -60,7 +60,7 @@ Feature: Verify the elements on NOP Commerce landing page
     Given I am on NOP Commerce Landing Page
     When I click "<Link name>" link in new tab
     Then the corresponding "<Page url>" url should be displayed
-    @check
+
     Examples:
     | Link name  | Page url                                                       |
     | Admin area | https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F |

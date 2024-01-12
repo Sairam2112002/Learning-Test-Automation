@@ -10,13 +10,13 @@ import courgette.api.testng.TestNGCourgette;
         threads = 4,
         runLevel = CourgetteRunLevel.SCENARIO,
         testOutput = CourgetteTestOutput.CONSOLE,
-        rerunFailedScenarios = false,
+        rerunFailedScenarios = true,
         reportTargetDir = "target",
         reportTitle = "NOPCommerce-Selenium-TestReport",
         cucumberOptions = @CucumberOptions(
                 features = {"src/test/resources/features/selenium/nopcommerce"},
                 glue = {"learning/cucumberselenium/nopcommerce/stepdefinitions"},
-                tags = "@LandingPage and @check",
+                tags = "@LandingPage",
                 plugin = {
                         "pretty",
                         "json:target/cucumber-reports/Cucumber.json",
