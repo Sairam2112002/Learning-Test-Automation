@@ -58,6 +58,8 @@ public class LandingPage extends BasePage{
         commonLinks.put("Premium support services", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[3]/ul/li[4]/a/span"));
         commonLinks.put("Request a quote", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[3]/ul/li[5]/a/span"));
         commonLinks.put("Contact us", By.xpath("//div[@class='navigation-body']/div/ul[1]/li[3]/ul/li[6]/a/span"));
+        commonLinks.put("Admin area link", By.cssSelector(".demo-buttons>a:nth-child(1)"));
+        commonLinks.put("Frontend link", By.cssSelector(".demo-buttons>a:nth-child(2)"));
     }
 
     public void navigateToNopCommerce() {

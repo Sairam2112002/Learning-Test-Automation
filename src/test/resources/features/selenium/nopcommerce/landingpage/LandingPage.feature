@@ -40,10 +40,10 @@ Feature: Verify the elements on NOP Commerce landing page
     Then the options "<Options>" should be displayed
 
     Examples:
-    | Section name       | Options                                                                                           |
-    | Product            | Store demo,Showcase Option,Features,Why for developers,Why for store owners,Industries            |
-    | Downloads          | Download nopCommerce,Marketplace,Translations,Copyright removal key,Mobile application,Web API    |
-    | Support & services | Training,Documentation,Community forums,Premium support services,Request a quote,Contact us       |
+    | Section name       | Options                                                                                        |
+    | Product            | Store demo,Showcase Option,Features,Why for developers,Why for store owners,Industries         |
+    | Downloads          | Download nopCommerce,Marketplace,Translations,Copyright removal key,Mobile application,Web API |
+    | Support & services | Training,Documentation,Community forums,Premium support services,Request a quote,Contact us    |
 
   Scenario: Validate the functionality of "Partners" navigation section in landing page
     Given I am on NOP Commerce Landing Page
@@ -55,4 +55,14 @@ Feature: Verify the elements on NOP Commerce landing page
     When I hover on "Product" element
     And I hover on "Industries" element
     Then the options "Fashion,Health & Beauty,Food & Beverage,Automotive,Industrial & Scientific,Furniture,B2B eCommerce,International" should be displayed
+
+  Scenario Outline: Validate the functionality of "<Link name>" link in landing page
+    Given I am on NOP Commerce Landing Page
+    When I click "<Link name>" link in new tab
+    Then the corresponding "<Page url>" url should be displayed
+
+    Examples:
+    | Link name  | Page url                                                       |
+    | Admin area | https://admin-demo.nopcommerce.com/login?ReturnUrl=%2Fadmin%2F |
+    | Frontend   | https://demo.nopcommerce.com/                                  |
     
