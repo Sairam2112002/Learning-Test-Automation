@@ -12,7 +12,6 @@ public class LandingPage extends BasePage{
     private static final String NOP_COMMERCE_URL = "https://www.nopcommerce.com/en/demo";
 
     public Map<String, By> landingPageLinks;
-    public Map<String, By> navigationSectionOptions;
 
     public LandingPage(WebDriver driver) {
         super(driver);
