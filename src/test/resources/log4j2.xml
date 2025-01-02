@@ -1,0 +1,22 @@
+<Configuration status="info">
+    <Properties>
+        <Property name="layout">%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Property>
+    </Properties>
+
+    <Appenders>
+        <!--    Console Appender to log into the console    -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${layout}" />
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <Root level="trace">
+            <!--      ref = Console Appender name -> to log into console
+                      ref = File Appender name -> to log into file
+                      ref = RollingFile Appender name -> to use rolling files instead of a single file
+                      We can also use multiple AppenderRefs at a time to log in multiple places  -->
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>

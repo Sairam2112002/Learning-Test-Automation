@@ -1,0 +1,59 @@
+<!-- Use any of these Appenders based on requirements -->
+<Appenders>
+    <!--    File Appender to log into a log file    -->
+    <!--    append = true -> to append new logs into the file everytime test is run
+            append = false -> to replace the logs everytime test is run    -->
+    <File name="File" fileName="Automation-Artifacts/Logs/logs.log" append="false">
+        <PatternLayout>
+            <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+        </PatternLayout>
+    </File>
+
+    <!--    Use this RollingFile Appender when we want to save a different log file each time we run the program    -->
+    <!--    fileName = is the log file name where current active logs are written to. This is the file where application data is currently being stored.
+
+            filePattern: is the name pattern used for the rolled over archived files
+            when the current active log fileName gets rolled over based on the specified policies.    -->
+    <RollingFile name="RollingFile" fileName="Automation-Artifacts/Logs/log-${date:yyyyMMdd-HHmmss}.log"
+                 filePattern="Automation-Artifacts/Logs/log-%d{yyyyMMdd-HHmmss}-%i.log">
+        <PatternLayout>
+            <pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</pattern>
+        </PatternLayout>
+
+        <!--      "Policies" in the log4j2 context refer to the rules or conditions that the logger follows for triggering a rollover.
+                  A rollover is the process of archiving the current log file and starting a new one.-->
+        <Policies>
+            <OnStartupTriggeringPolicy />
+        </Policies>
+    </RollingFile>
+</Appenders>
+
+<!-- For the RollingFile Appender in log4j2, there are several policies available under <Policies> tag. They are: -->
+<!--
+1. SizeBasedTriggeringPolicy: This policy causes a rollover when the size of the log file grows beyond a certain point.
+   The 'size' attribute is used to specify the maximum size the log file can reach before rollover.
+
+Example: <SizeBasedTriggeringPolicy size="500 MB"/>
+
+2. TimeBasedTriggeringPolicy: This policy causes a rollover based on time. The 'interval' and 'modulate' attributes control
+   how frequently rollovers occur and whether the rollovers are aligned with the system clock.
+
+Example: <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+
+3. OnStartupTriggeringPolicy: This policy causes a rollover every time the application starts up.
+
+Example: <OnStartupTriggeringPolicy />
+
+4. CronTriggeringPolicy: This policy causes a rollover based on a cron expression.
+   The 'schedule' attribute is used to specify the cron expression.
+
+Example: <CronTriggeringPolicy schedule="0 0 0 * * ?"/> (Rollover everyday at midnight)
+
+5. CompositeTriggeringPolicy: This policy combines several triggering policies and rolls over if any of the associated policies fires.
+
+Example:
+<CompositeTriggeringPolicy>
+  <TimeBasedTriggeringPolicy />
+  <SizeBasedTriggeringPolicy size="500 MB"/>
+</CompositeTriggeringPolicy>
+ -->
