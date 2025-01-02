@@ -1,0 +1,119 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite - 1">
+    <!--  Parameters can also be defined at "test" and "class" levels  -->
+    <parameter name="first-name" value="Harry"/>
+    <parameter name="last-name" value="Potter"/>
+    <parameter name="gender" value="male"/>
+
+    <!--  Including a class  -->
+    <test name="Test - 1 - Running a Class - 1">
+        <classes>
+            <class name="learning.unittesting.testng.TestNGBasic"/>
+        </classes>
+    </test>
+
+    <!--  Including and excluding specific groups  -->
+    <test name="Test - 2 - Groups - 1 - Group">
+        <groups>
+            <run>
+                <include name="group.*"/>
+                <exclude name="group.3"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="learning.unittesting.testng.GroupsTest"/>
+        </classes>
+    </test>
+
+    <!--  Including and excluding specific nested groups -->
+    <test name="Test - 2 - Groups - 2 - Groups of similar type">
+        <groups>
+            <run>
+                <include name="group.group1.*"/>
+                <exclude name="group.group2.*"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="learning.unittesting.testng.GroupsTest"/>
+        </classes>
+    </test>
+
+    <!--  Defining a separate group in which specific groups can be included or excluded ,and we can run that defined group using its name  -->
+    <test name="Test - 2 - Groups - 3 - Groups of Groups">
+        <groups>
+            <define name="Groups - 1 and 2">
+                <include name="group.group1.*"/>
+                <include name="group.group2.*"/>
+            </define>
+
+            <run>
+                <include name="Groups - 1 and 2"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="learning.unittesting.testng.GroupsTest"/>
+        </classes>
+    </test>
+
+    <!--  Annotating the Class itself as @Test  -->
+    <test name="Test - 2 - Groups - 4 - Annotating the class @Test">
+        <groups>
+            <run>
+                <include name="main group"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="learning.unittesting.testng.GroupsTest"/>
+        </classes>
+    </test>
+
+    <!--  Using @Parameter and @Optional Tags in the Test Class and <Parameters> are added in testng.xml  -->
+    <test name="Test - 3 - Parameters - 1 - @Parameter and @Optional Tags">
+        <classes>
+            <class name="learning.unittesting.testng.ParametersTest"/>
+        </classes>
+    </test>
+
+    <!--  Data provider created and used in the same Class  -->
+    <test name="Test - 4 - Data Providers - 1 - In same Class">
+        <groups>
+            <run>
+                <include name="group.car"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="learning.unittesting.testng.DataProviderTest"/>
+        </classes>
+    </test>
+
+    <!--  Data provider created in one Class and used in a different Class  -->
+    <test name="Test - 4 - Data Providers - 2 - In different Class">
+        <groups>
+            <run>
+                <include name="group.aircraft"/>
+            </run>
+        </groups>
+
+        <classes>
+            <class name="learning.unittesting.testng.DataProviderTest"/>
+        </classes>
+    </test>
+
+    <!--  @Ignore annotation to ignore a method or even a Class  -->
+    <test name="Test - 5 - Ignoring - 1 - Ignoring methods">
+        <classes>
+            <class name="learning.unittesting.testng.IgnoringTest"/>
+        </classes>
+    </test>
+
+    <test name="Test - 6 - Before and After Annotations">
+        <classes>
+            <class name="learning.unittesting.testng.AnnotationsTest"/>
+        </classes>
+    </test>
+</suite>
