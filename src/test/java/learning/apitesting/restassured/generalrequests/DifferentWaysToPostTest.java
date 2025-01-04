@@ -1,4 +1,4 @@
-package learning.apitesting.restassured;
+package learning.apitesting.restassured.generalrequests;
 
 import io.restassured.response.Response;
 import learning.apitesting.restassured.pojo.Person;
