@@ -4,16 +4,20 @@ import io.restassured.response.Response;
 import learning.apitesting.restassured.pojo.Person;
 import learning.apitesting.restassured.pojo.User;
 import org.json.JSONObject;
+import org.json.JSONTokener;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.HashMap;
 
 import static io.restassured.RestAssured.*;
 
 public class DifferentWaysToPostTest {
-    private static int createdPostID;
+    private static int createdUserID;
     private static Person person;
 
     @BeforeClass
@@ -25,7 +29,7 @@ public class DifferentWaysToPostTest {
     public void deleteCreatedUser() {
         given()
                 .when()
-                .delete("/api/users/" + createdPostID)
+                .delete("/api/users/" + createdUserID)
                 .then()
                 .statusCode(204);
     }
@@ -34,8 +38,8 @@ public class DifferentWaysToPostTest {
     public void postUsingNormalStringBody() {
         String requestBody = """
                 {
-                    "name": "testName",
-                    "job": "testJobRole"
+                    "name": "testName1",
+                    "job": "testJobRole1"
                 }
                 """;
         Response response = given()
@@ -43,7 +47,7 @@ public class DifferentWaysToPostTest {
                 .contentType("application/json")
                 .post("/api/users");
         response.then().statusCode(201).log().body();
-        createdPostID = response.jsonPath().getInt("id");
+        createdUserID = response.jsonPath().getInt("id");
     }
 
     @Test(priority = 2)
@@ -60,7 +64,7 @@ public class DifferentWaysToPostTest {
                 .contentType("application/json")
                 .post("/api/users");
         response.then().statusCode(201).log().body();
-        createdPostID = response.jsonPath().getInt("id");
+        createdUserID = response.jsonPath().getInt("id");
     }
 
     @Test(priority = 3)
@@ -74,7 +78,7 @@ public class DifferentWaysToPostTest {
                 .contentType("application/json")
                 .post("/api/users");
         response.then().statusCode(201).log().body();
-        createdPostID = response.jsonPath().getInt("id");
+        createdUserID = response.jsonPath().getInt("id");
     }
 
     @Test(priority = 4)
@@ -88,7 +92,7 @@ public class DifferentWaysToPostTest {
                 .contentType("application/json")
                 .post("/api/users");
         response.then().statusCode(201).log().body();
-        createdPostID = response.jsonPath().getInt("id");
+        createdUserID = response.jsonPath().getInt("id");
     }
 
     @Test(priority = 5)
@@ -101,5 +105,19 @@ public class DifferentWaysToPostTest {
                 .contentType("application/json")
                 .post("/api/users");
         response.then().statusCode(201).log().body();
+    }
+
+    @Test(priority = 6)
+    public void postUsingExternalJSONFile() throws FileNotFoundException {
+        File file = new File("src\\test\\resources\\JSONBodies\\requestBody.json");
+        FileReader fileReader = new FileReader(file);
+        JSONTokener jsonTokener = new JSONTokener(fileReader);
+        JSONObject requestBody = new JSONObject(jsonTokener);
+        Response response = given()
+                .body(requestBody.toString())
+                .contentType("application/json")
+                .post("/api/users");
+        response.then().statusCode(201).log().body();
+        createdUserID = response.jsonPath().getInt("id");
     }
 }
