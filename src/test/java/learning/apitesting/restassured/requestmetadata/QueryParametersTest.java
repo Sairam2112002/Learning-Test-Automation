@@ -1,32 +1,24 @@
 package learning.apitesting.restassured.requestmetadata;
 
-import io.restassured.path.json.JsonPath;
+import learning.apitesting.restassured.RestAssuredBaseTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.io.File;
 import java.util.HashMap;
 
 import static io.restassured.RestAssured.*;
 
-public class QueryParametersTest {
-    private static String apiKey;
-
+public class QueryParametersTest extends RestAssuredBaseTest {
     @BeforeClass
-    public void setup() {
+    public void Setup() {
         baseURI = "https://api.nytimes.com/";
-
-        String apiKeysJsonPath = System.getenv("API_KEYS_JSON_PATH");
-        File file = new File(apiKeysJsonPath);
-        JsonPath jsonPath = new JsonPath(file);
-        apiKey = jsonPath.getString("newYorkTimesBooksAPIKey");
     }
 
     @Test(priority = 1)
     public void usingQueryParamMethod() {
         given()
                 .queryParam("list", "hardcover-fiction")
-                .queryParam("api-key", apiKey)
+                .queryParam("api-key", newYorkTimesApiKey)
                 .when()
                 .get("svc/books/v3/lists.json")
                 .then()
@@ -38,7 +30,7 @@ public class QueryParametersTest {
     public void usingHashmapWithQueryParamsMethod() {
         HashMap<String, Object> queryParameters = new HashMap<>();
         queryParameters.put("list", "hardcover-fiction");
-        queryParameters.put("api-key", apiKey);
+        queryParameters.put("api-key", newYorkTimesApiKey);
 
         given()
                 .queryParams(queryParameters)
@@ -53,7 +45,7 @@ public class QueryParametersTest {
     @Test(priority = 3)
     public void usingMultipleArgumentsInQueryParamsMethod() {
         given()
-                .queryParams("list", "hardcover-fiction", "api-key", apiKey)
+                .queryParams("list", "hardcover-fiction", "api-key", newYorkTimesApiKey)
                 .when()
                 .get("svc/books/v3/lists.json")
                 .then()
@@ -65,7 +57,7 @@ public class QueryParametersTest {
     public void usingInlineQueryParameters() {
         given()
                 .when()
-                .get("svc/books/v3/lists.json?" + "list=hardcover-fiction" + "&" + "api-key=" + apiKey)
+                .get("svc/books/v3/lists.json?" + "list=hardcover-fiction" + "&" + "api-key=" + newYorkTimesApiKey)
                 .then()
                 .statusCode(200)
                 .log().body();

@@ -2,6 +2,7 @@ package learning.apitesting.restassured.parsing;
 
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import learning.apitesting.restassured.RestAssuredBaseTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.SoftAssertions;
@@ -9,30 +10,22 @@ import org.json.JSONObject;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.io.File;
-
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-public class ParsingJSONResponseTest {
-    private static String apiKey;
+public class ParsingJSONResponseTest extends RestAssuredBaseTest {
     private static SoftAssertions softAssertions;
     private static final Logger LOGGER = LogManager.getLogger(ParsingJSONResponseTest.class);
 
     @BeforeClass
     public void setup() {
         baseURI = "https://api.nytimes.com/";
-
-        String apiKeysJsonPath = System.getenv("API_KEYS_JSON_PATH");
-        File file = new File(apiKeysJsonPath);
-        JsonPath jsonPath = new JsonPath(file);
-        apiKey = jsonPath.getString("newYorkTimesBooksAPIKey");
     }
 
     @Test(priority = 1)
     public void usingThenMethods() {
         given()
-                .queryParam("api-key", apiKey)
+                .queryParam("api-key", newYorkTimesApiKey)
                 .queryParam("list", "hardcover-fiction")
                 .when()
                 .get("svc/books/v3/lists.json")
@@ -50,7 +43,7 @@ public class ParsingJSONResponseTest {
     @Test(priority = 2)
     public void usingResponseAndJSONObject() {
         Response response = given()
-                .queryParam("api-key", apiKey)
+                .queryParam("api-key", newYorkTimesApiKey)
                 .queryParam("list", "hardcover-fiction")
                 .when()
                 .get("svc/books/v3/lists.json");
@@ -77,7 +70,7 @@ public class ParsingJSONResponseTest {
     @Test(priority = 3)
     public void usingResponseAndJSONPath() {
         Response response = given()
-                .queryParam("api-key", apiKey)
+                .queryParam("api-key", newYorkTimesApiKey)
                 .queryParam("list", "hardcover-fiction")
                 .when()
                 .get("svc/books/v3/lists.json");

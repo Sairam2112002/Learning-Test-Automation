@@ -1,25 +1,17 @@
 package learning.apitesting.restassured.requestmetadata;
 
-import io.restassured.path.json.JsonPath;
+import learning.apitesting.restassured.RestAssuredBaseTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.io.File;
 import java.util.HashMap;
 
 import static io.restassured.RestAssured.*;
 
-public class PathParametersTest {
-    private static String apiKey;
-
+public class PathParametersTest extends RestAssuredBaseTest {
     @BeforeClass
     public void setup() {
         baseURI = "https://api.nytimes.com/";
-
-        String apiKeysJsonPath = System.getenv("API_KEYS_JSON_PATH");
-        File file = new File(apiKeysJsonPath);
-        JsonPath jsonPath = new JsonPath(file);
-        apiKey = jsonPath.getString("newYorkTimesBooksAPIKey");
     }
 
     @Test(priority = 1)
@@ -29,7 +21,7 @@ public class PathParametersTest {
                 .pathParam("path2", "books")
                 .pathParam("path3", "v3")
                 .when()
-                .get("{path1}/{path2}/{path3}/lists.json?" + "list=hardcover-fiction" + "&" + "api-key=" + apiKey)
+                .get("{path1}/{path2}/{path3}/lists.json?" + "list=hardcover-fiction" + "&" + "api-key=" + newYorkTimesApiKey)
                 .then()
                 .statusCode(200)
                 .log().body();
@@ -45,7 +37,7 @@ public class PathParametersTest {
         given()
                 .pathParams(pathParameters)
                 .when()
-                .get("{path1}/{path2}/{path3}/lists.json?" + "list=hardcover-fiction" + "&" + "api-key=" + apiKey)
+                .get("{path1}/{path2}/{path3}/lists.json?" + "list=hardcover-fiction" + "&" + "api-key=" + newYorkTimesApiKey)
                 .then()
                 .statusCode(200)
                 .log().body();
@@ -56,7 +48,7 @@ public class PathParametersTest {
         given()
                 .pathParams("path1", "svc", "path2", "books", "path3", "v3")
                 .when()
-                .get("{path1}/{path2}/{path3}/lists.json?" + "list=hardcover-fiction" + "&" + "api-key=" + apiKey)
+                .get("{path1}/{path2}/{path3}/lists.json?" + "list=hardcover-fiction" + "&" + "api-key=" + newYorkTimesApiKey)
                 .then()
                 .statusCode(200)
                 .log().body();
@@ -66,7 +58,7 @@ public class PathParametersTest {
     public void usingInlinePathParameters() {
         given()
                 .when()
-                .get("svc/books/v3/lists.json?" + "list=hardcover-fiction" + "&" + "api-key=" + apiKey)
+                .get("svc/books/v3/lists.json?" + "list=hardcover-fiction" + "&" + "api-key=" + newYorkTimesApiKey)
                 .then()
                 .statusCode(200)
                 .log().body();

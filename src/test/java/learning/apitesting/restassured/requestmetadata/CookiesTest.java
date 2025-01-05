@@ -1,10 +1,10 @@
 package learning.apitesting.restassured.requestmetadata;
 
-import com.github.javafaker.Faker;
 import io.restassured.filter.session.SessionFilter;
 import io.restassured.response.Response;
+import learning.apitesting.restassured.RestAssuredBaseTest;
+import learning.apitesting.restassured.apichaining.CreateUserTest;
 import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.Test;
 
@@ -13,13 +13,11 @@ import java.util.Map;
 
 import static io.restassured.RestAssured.*;
 
-public class CookiesTest {
-    private static final Faker faker = new Faker();
-    private static final Logger LOGGER = LogManager.getLogger(CookiesTest.class);
-
+public class CookiesTest extends RestAssuredBaseTest {
     @BeforeGroups(groups = {"setCookies"})
     public void setupSetCookies() {
         baseURI = "https://httpbin.org/";
+        logger = LogManager.getLogger(CreateUserTest.class);
     }
 
     @BeforeGroups(groups = {"extractCookies", "validateCookies"})
@@ -58,7 +56,7 @@ public class CookiesTest {
         Response response = given()
                 .when()
                 .get();
-        LOGGER.info(response.cookie("AEC"));
+        logger.info(response.cookie("AEC"));
     }
 
     @Test(priority = 4, groups = {"extractCookies"})
@@ -69,7 +67,7 @@ public class CookiesTest {
                 .then()
                 .extract()
                 .cookie("AEC");
-        LOGGER.info(aecCookie);
+        logger.info(aecCookie);
     }
 
     @Test(priority = 5, groups = {"extractCookies"})
@@ -81,7 +79,7 @@ public class CookiesTest {
                 .extract()
                 .cookies();
         for(String cookie: cookies.keySet()) {
-            LOGGER.info("{}: {}", cookie, cookies.get(cookie));
+            logger.info("{}: {}", cookie, cookies.get(cookie));
         }
     }
 

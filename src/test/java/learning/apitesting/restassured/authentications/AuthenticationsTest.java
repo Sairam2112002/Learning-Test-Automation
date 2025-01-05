@@ -1,28 +1,13 @@
 package learning.apitesting.restassured.authentications;
 
-import io.restassured.path.json.JsonPath;
-import org.testng.annotations.BeforeClass;
+import learning.apitesting.restassured.RestAssuredBaseTest;
 import org.testng.annotations.BeforeGroups;
 import org.testng.annotations.Test;
-
-import java.io.File;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.equalTo;
 
-public class AuthenticationsTest {
-    private static String githubToken;
-    private static String openWeatherMapApiKey;
-
-    @BeforeClass
-    public void setup() {
-        String apiKeysJsonPath = System.getenv("API_KEYS_JSON_PATH");
-        File file = new File(apiKeysJsonPath);
-        JsonPath jsonPath = new JsonPath(file);
-        githubToken = jsonPath.getString("githubFineGrainToken");
-        openWeatherMapApiKey = jsonPath.getString("openWeatherMapAPIKey");
-    }
-
+public class AuthenticationsTest extends RestAssuredBaseTest {
     @BeforeGroups(groups = {"postmanAuthentications"})
     public void setPostmanUri() {
         baseURI = "https://postman-echo.com/";
@@ -81,7 +66,7 @@ public class AuthenticationsTest {
     @Test(priority = 4, groups = {"githubAuthentications"})
     public void bearerTokenAuthentication() {
         given()
-                .header("Authorization", "Bearer " + githubToken)
+                .header("Authorization", "Bearer " + gitHubFineGrainToken)
                 .when()
                 .get("user/repos")
                 .then()
@@ -93,7 +78,7 @@ public class AuthenticationsTest {
     public void oAuth2Authentication() {
         given()
                 .auth()
-                .oauth2(githubToken)
+                .oauth2(gitHubFineGrainToken)
                 .when()
                 .get("user/repos")
                 .then()

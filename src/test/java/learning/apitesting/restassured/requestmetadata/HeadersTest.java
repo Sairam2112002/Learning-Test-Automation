@@ -2,6 +2,7 @@ package learning.apitesting.restassured.requestmetadata;
 
 import io.restassured.http.Header;
 import io.restassured.http.Headers;
+import learning.apitesting.restassured.RestAssuredBaseTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.BeforeClass;
@@ -11,7 +12,7 @@ import java.util.HashMap;
 
 import static io.restassured.RestAssured.*;
 
-public class HeadersTest {
+public class HeadersTest extends RestAssuredBaseTest {
     private static final Logger LOGGER = LogManager.getLogger(HeadersTest.class);
 
     @BeforeClass

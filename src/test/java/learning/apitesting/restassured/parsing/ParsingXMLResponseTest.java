@@ -2,6 +2,7 @@ package learning.apitesting.restassured.parsing;
 
 import io.restassured.path.xml.XmlPath;
 import io.restassured.response.Response;
+import learning.apitesting.restassured.RestAssuredBaseTest;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.assertj.core.api.SoftAssertions;
@@ -10,7 +11,7 @@ import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.*;
 
-public class ParsingXMLResponseTest {
+public class ParsingXMLResponseTest extends RestAssuredBaseTest {
     private static final SoftAssertions softAssertions = new SoftAssertions();
     private static final Logger LOGGER = LogManager.getLogger(ParsingXMLResponseTest.class);
 

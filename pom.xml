@@ -35,7 +35,7 @@
 <!--            For this element, we have to provide the path of testng.xml file from the root folder i.e. starting with src-->
 
             <suiteXmlFiles>
-              <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
+              <suiteXmlFile>src/test/resources/TestNGXMLFiles/APIChainingRestAssured.xml</suiteXmlFile>
             </suiteXmlFiles>
           </configuration>
         </plugin>

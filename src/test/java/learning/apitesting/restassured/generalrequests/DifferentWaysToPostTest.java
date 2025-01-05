@@ -1,6 +1,7 @@
 package learning.apitesting.restassured.generalrequests;
 
 import io.restassured.response.Response;
+import learning.apitesting.restassured.RestAssuredBaseTest;
 import learning.apitesting.restassured.pojo.Person;
 import learning.apitesting.restassured.pojo.User;
 import org.json.JSONObject;
@@ -16,7 +17,7 @@ import java.util.HashMap;
 
 import static io.restassured.RestAssured.*;
 
-public class DifferentWaysToPostTest {
+public class DifferentWaysToPostTest extends RestAssuredBaseTest {
     private static int createdUserID;
     private static Person person;
 

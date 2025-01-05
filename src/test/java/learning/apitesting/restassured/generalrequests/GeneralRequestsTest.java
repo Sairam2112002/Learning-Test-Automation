@@ -1,12 +1,13 @@
 package learning.apitesting.restassured.generalrequests;
 
 import io.restassured.response.Response;
+import learning.apitesting.restassured.RestAssuredBaseTest;
 import learning.apitesting.restassured.pojo.Person;
 import org.testng.annotations.*;
 
 import static io.restassured.RestAssured.*;
 
-public class GeneralRequestsTest {
+public class GeneralRequestsTest extends RestAssuredBaseTest {
     private static Person person;
     private static int createdUserID;
 
