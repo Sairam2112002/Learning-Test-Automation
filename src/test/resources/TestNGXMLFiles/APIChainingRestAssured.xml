@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="API Chaining with Rest Assured">
+    <test name="User CRUD operations">
+        <classes>
+            <class name="learning.apitesting.restassured.apichaining.CreateUserTest" />
+            <class name="learning.apitesting.restassured.apichaining.GetUserTest" />
+            <class name="learning.apitesting.restassured.apichaining.UpdateUserTest" />
+            <class name="learning.apitesting.restassured.apichaining.DeleteUserTest" />
+        </classes>
+    </test>
+</suite>
