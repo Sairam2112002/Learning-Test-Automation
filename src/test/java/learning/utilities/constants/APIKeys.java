@@ -3,7 +3,7 @@ package learning.utilities.constants;
 import java.util.HashMap;
 
 /**
- * Available API Keys: <br><br>
+ * Available API Keys: <br>
  * <ol>
  *     <li>GitHub Fine Grain Token</li>
  *     <li>New York Times API Key</li>
