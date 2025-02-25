@@ -1,4 +1,4 @@
-package learning.uitesting.selenium.generalactions;
+package learning.uitesting.selenium;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;

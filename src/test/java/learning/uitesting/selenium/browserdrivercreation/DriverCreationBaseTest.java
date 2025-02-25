@@ -1,4 +1,4 @@
-package learning.uitesting.selenium.generalactions.browserdrivercreation;
+package learning.uitesting.selenium.browserdrivercreation;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

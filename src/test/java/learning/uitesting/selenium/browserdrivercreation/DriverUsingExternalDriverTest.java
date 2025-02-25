@@ -1,4 +1,4 @@
-package learning.uitesting.selenium.generalactions.browserdrivercreation;
+package learning.uitesting.selenium.browserdrivercreation;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
