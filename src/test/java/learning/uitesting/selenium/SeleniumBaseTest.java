@@ -18,6 +18,7 @@ public class SeleniumBaseTest {
     protected static final String NOP_COMMERCE_URL = "https://www.nopcommerce.com/en/demo";
     protected static final String GOOGLE_SEARCH_URL = "https://www.google.com/";
     protected static final String SELENIUM_HOME_PAGE_URL = "https://www.selenium.dev/";
+    protected static final String MDN_WEB_DOCS_URL = "https://developer.mozilla.org/en-US/";
     protected static final String EXAMPLE_URL = "http://example.com";
     protected static final String WIKIPEDIA_URL = "https://www.wikipedia.org/";
     protected static final String OPEN_CART_URL = "https://naveenautomationlabs.com/opencart/";
@@ -29,17 +30,12 @@ public class SeleniumBaseTest {
     @BeforeClass
     public void baseSetup() {
         logger = LogManager.getLogger(this.getClass());
-    }
-
-    @BeforeTest
-    public void beforeTest() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
-    @AfterTest
-    public void afterTest() {
+    @AfterClass
+    public void tearDown() {
         driver.quit();
     }
 }
