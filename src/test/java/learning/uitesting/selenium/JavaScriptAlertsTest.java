@@ -8,18 +8,19 @@ import org.testng.annotations.Test;
 public class JavaScriptAlertsTest extends SeleniumBaseTest {
     private Alert alert;
 
-    @Test
-    public void alertsAndPopups() {
+    @Test(priority = 1)
+    public void simpleAlert() {
         driver.get(HEROKU_JS_ALERTS);
 
-        // Simple Alert
         WebElement simpleAlertButton = driver.findElement(By.xpath("//button[@onclick='jsAlert()']"));
         simpleAlertButton.click();
         alert = driver.switchTo().alert();
         alert.accept();
         logger.info(driver.findElement(By.xpath("//p[@id='result']")).getText());
+    }
 
-        // Confirm Alert
+    @Test(priority = 2)
+    public void confirmAlert() {
         WebElement confirmAlertButton = driver.findElement(By.xpath("//button[@onclick='jsConfirm()']"));
 
         confirmAlertButton.click();
@@ -31,8 +32,10 @@ public class JavaScriptAlertsTest extends SeleniumBaseTest {
         alert = driver.switchTo().alert();
         alert.dismiss();
         logger.info(driver.findElement(By.xpath("//p[@id='result']")).getText());
+    }
 
-        // Prompt Alert
+    @Test(priority = 3)
+    public void promptAlert() {
         WebElement promptAlertButton = driver.findElement(By.xpath("//button[@onclick='jsPrompt()']"));
 
         promptAlertButton.click();
