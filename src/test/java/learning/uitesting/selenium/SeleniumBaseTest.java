@@ -20,6 +20,10 @@ public class SeleniumBaseTest {
     protected static final String SELENIUM_HOME_PAGE_URL = "https://www.selenium.dev/";
     protected static final String EXAMPLE_URL = "http://example.com";
     protected static final String WIKIPEDIA_URL = "https://www.wikipedia.org/";
+    protected static final String OPEN_CART_URL = "https://naveenautomationlabs.com/opencart/";
+    protected static final String HEROKU_CHECKBOXES = "https://the-internet.herokuapp.com/checkboxes";
+    protected static final String LAMBDA_TEST_RADIO_BUTTONS = "https://www.lambdatest.com/selenium-playground/radiobutton-demo";
+    protected static final String LAMBDA_TEST_SELECT_DROPDOWN = "https://www.lambdatest.com/selenium-playground/select-dropdown-demo";
 
     @BeforeClass
     public void baseSetup() {

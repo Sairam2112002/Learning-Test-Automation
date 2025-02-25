@@ -3,7 +3,7 @@ package learning.uitesting.selenium;
 import org.testng.annotations.Test;
 
 public class WebPageNavigationTest extends SeleniumBaseTest {
-    @Test(priority = 1)
+    @Test
     public void navigateDriver() {
         /*
          * Navigate to example.com
