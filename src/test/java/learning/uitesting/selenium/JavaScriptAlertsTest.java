@@ -10,7 +10,7 @@ public class JavaScriptAlertsTest extends SeleniumBaseTest {
 
     @Test(priority = 1)
     public void simpleAlert() {
-        driver.get(HEROKU_JS_ALERTS);
+        driver.get(HEROKU_JS_ALERTS_URL);
 
         WebElement simpleAlertButton = driver.findElement(By.xpath("//button[@onclick='jsAlert()']"));
         simpleAlertButton.click();

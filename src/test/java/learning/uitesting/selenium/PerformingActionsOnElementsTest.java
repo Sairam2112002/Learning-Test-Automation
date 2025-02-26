@@ -37,7 +37,7 @@ public class PerformingActionsOnElementsTest extends SeleniumBaseTest {
 
     @Test(priority = 4)
     public void checkboxes() {
-        driver.get(HEROKU_CHECKBOXES);
+        driver.get(HEROKU_CHECKBOXES_URL);
         List<WebElement> checkboxes = driver.findElements(By.xpath("//form[@id='checkboxes']/input"));
 
         checkboxes.getFirst().click();
@@ -46,7 +46,7 @@ public class PerformingActionsOnElementsTest extends SeleniumBaseTest {
 
     @Test(priority = 5)
     public void radioButtons() {
-        driver.get(LAMBDA_TEST_RADIO_BUTTONS);
+        driver.get(LAMBDATEST_RADIO_BUTTONS_URL);
         WebElement maleRadioButton = driver.findElement(By.xpath("(//input[@type='radio'])[1]"));
         WebElement getValueButton = driver.findElement(By.xpath("//button[@id='buttoncheck']"));
 
@@ -56,7 +56,7 @@ public class PerformingActionsOnElementsTest extends SeleniumBaseTest {
 
     @Test(priority = 6)
     public void selectDropdown() {
-        driver.get(LAMBDA_TEST_SELECT_DROPDOWN);
+        driver.get(LAMBDATEST_SELECT_DROPDOWN_URL);
         WebElement dropdownSelectElement = driver.findElement(By.xpath("//select[@id='select-demo']"));
         Select selectDropdown = new Select(dropdownSelectElement);
 
