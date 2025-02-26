@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class ScreenshotsTest extends SeleniumBaseTest {
     @Test
     public void takeScreenshot() {
-        driver.get(LAMBDA_TEST_SELENIUM_PLAYGROUND);
+        driver.get(LAMBDATEST_SELENIUM_PLAYGROUND);
 
         TakesScreenshot screenshot = (TakesScreenshot) driver;
         File file = screenshot.getScreenshotAs(OutputType.FILE);
