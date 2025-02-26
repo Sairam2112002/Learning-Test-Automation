@@ -18,7 +18,7 @@ public class FramesAndIframesTest extends SeleniumBaseTest {
     private WebElement iframeEditorArea;
 
     @Test(priority = 1)
-    public void iframeUsingIndexTest() throws InterruptedException {
+    public void iframeUsingIndexTest() {
         driver.get(LAMBDATEST_IFRAME_URL);
 
         driver.switchTo().frame(0);
