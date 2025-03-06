@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         glue = {"learning/cucumberbdd/basics/stepdefinitions"},
         features = {"src/test/resources/features/basics"},
-        tags = "@Scenario or @ScenarioOutline and not @Rule"
+        tags = "@DataTable"
 )
 public class CucumberBasicsTestNGRunnerTest extends AbstractTestNGCucumberTests {
 }
