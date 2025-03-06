@@ -83,7 +83,7 @@
       <scope>provided</scope>
     </dependency>
 
-    <!--  API Testing Dependencies-->
+<!--  API Testing Dependencies-->
 
     <!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
     <dependency>
@@ -130,7 +130,7 @@
       <version>2.11.0</version>
     </dependency>
 
-    <!--  UI Testing Dependencies-->
+<!--  UI Testing Dependencies-->
 
     <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
     <dependency>
