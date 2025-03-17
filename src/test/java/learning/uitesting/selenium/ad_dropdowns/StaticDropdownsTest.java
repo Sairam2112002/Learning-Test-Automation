@@ -1,15 +1,12 @@
 package learning.uitesting.selenium.ad_dropdowns;
 
 import learning.uitesting.selenium.utilities.SeleniumBaseTest;
-import learning.uitesting.selenium.utilities.UtilityMethods;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 public class StaticDropdownsTest extends SeleniumBaseTest {
-    private final UtilityMethods utilityMethods = new UtilityMethods();
-
     public StaticDropdownsTest() {
         xpathLocators.put("CURRENCY_DROPDOWN", "//select[@id='ctl00_mainContent_DropDownListCurrency']");
         xpathLocators.put("PASSENGERS_DROPDOWN", "//div[@id='divpaxinfo']");
@@ -46,7 +43,7 @@ public class StaticDropdownsTest extends SeleniumBaseTest {
         WebElement adultIncreaseButton = driver.findElement(By.xpath(xpathLocators.get("PASSENGERS_ADULT_INCREASE")));
         WebElement adultDecreaseButton = driver.findElement(By.xpath(xpathLocators.get("PASSENGERS_ADULT_DECREASE")));
 
-        utilityMethods.waitForElementToBeClickable(xpathLocators.get("PASSENGERS_ADULT_INCREASE"));
+        waitForElementToBeClickable(xpathLocators.get("PASSENGERS_ADULT_INCREASE"));
         for(int i = 1; i <= 8; i++) {
             adultIncreaseButton.click();
         }

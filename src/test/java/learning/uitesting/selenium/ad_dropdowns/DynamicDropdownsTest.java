@@ -1,13 +1,10 @@
 package learning.uitesting.selenium.ad_dropdowns;
 
 import learning.uitesting.selenium.utilities.SeleniumBaseTest;
-import learning.uitesting.selenium.utilities.UtilityMethods;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 public class DynamicDropdownsTest extends SeleniumBaseTest {
-    private final UtilityMethods utilityMethods = new UtilityMethods();
-
     public DynamicDropdownsTest() {
         xpathLocators.put("DEPARTURE_CITY_DROPDOWN", "//input[@id='ctl00_mainContent_ddl_originStation1_CTXT']");
         xpathLocators.put("DEPARTURE_CITY_HYDERABAD_OPTION", "//a[@value='HYD']");
@@ -24,13 +21,13 @@ public class DynamicDropdownsTest extends SeleniumBaseTest {
     public void dynamicDropdowns() {
         driver.findElement(By.xpath(xpathLocators.get("DEPARTURE_CITY_DROPDOWN"))).click();
 
-        utilityMethods.waitForElementToBeVisible(xpathLocators.get("DEPARTURE_CITY_HYDERABAD_OPTION"));
+        waitForElementToBeVisible(xpathLocators.get("DEPARTURE_CITY_HYDERABAD_OPTION"));
         driver.findElement(By.xpath(xpathLocators.get("DEPARTURE_CITY_HYDERABAD_OPTION"))).click();
 
-        utilityMethods.waitForElementToBeVisible(xpathLocators.get("ARRIVAL_CITY_VIJAYAWADA_OPTION"));
+        waitForElementToBeVisible(xpathLocators.get("ARRIVAL_CITY_VIJAYAWADA_OPTION"));
         driver.findElement(By.xpath(xpathLocators.get("ARRIVAL_CITY_VIJAYAWADA_OPTION"))).click();
 
-        utilityMethods.waitForElementToBeVisible(xpathLocators.get("DEPART_DATE_MAY_10"));
+        waitForElementToBeVisible(xpathLocators.get("DEPART_DATE_MAY_10"));
         driver.findElement(By.xpath(xpathLocators.get("DEPART_DATE_MAY_10"))).click();
     }
 }
