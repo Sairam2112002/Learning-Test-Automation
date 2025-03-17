@@ -1,4 +1,4 @@
-package learning.uitesting.selenium;
+package learning.uitesting.selenium.utilities;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -7,9 +7,12 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import java.util.HashMap;
+
 public class SeleniumBaseTest {
     protected static WebDriver driver;
     protected Logger logger;
+    protected final HashMap<String, String> xpathLocators = new HashMap<>();
 
     protected static final String NOP_COMMERCE_URL = "https://www.nopcommerce.com/en/demo";
     protected static final String GOOGLE_SEARCH_URL = "https://www.google.com/";
@@ -26,6 +29,7 @@ public class SeleniumBaseTest {
     protected static final String LAMBDATEST_NESTED_FRAMES_URL = "https://www.lambdatest.com/selenium-playground/nested-frames/";
     protected static final String LAMBDATEST_INPUT_FORM_URL = "https://www.lambdatest.com/selenium-playground/input-form-demo";
     protected static final String RAHUL_SHETTY_ACADEMY_LOCATORS_PRACTICE = "https://rahulshettyacademy.com/locatorspractice/";
+    protected static final String RAHUL_SHETTY_ACADEMY_DROPDOWN_PRACTICE = "https://rahulshettyacademy.com/dropdownsPractise/";
 
     @BeforeClass
     public void baseSetup() {
