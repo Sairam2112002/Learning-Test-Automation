@@ -25,6 +25,7 @@ public class SeleniumBaseTest {
     protected static final String LAMBDATEST_IFRAME_URL = "https://www.lambdatest.com/selenium-playground/iframe-demo/";
     protected static final String LAMBDATEST_NESTED_FRAMES_URL = "https://www.lambdatest.com/selenium-playground/nested-frames/";
     protected static final String LAMBDATEST_INPUT_FORM_URL = "https://www.lambdatest.com/selenium-playground/input-form-demo";
+    protected static final String RAHUL_SHETTY_ACADEMY_LOCATORS_PRACTICE = "https://rahulshettyacademy.com/locatorspractice/";
 
     @BeforeClass
     public void baseSetup() {
