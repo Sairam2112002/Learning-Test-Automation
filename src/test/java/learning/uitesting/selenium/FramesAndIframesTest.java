@@ -1,6 +1,6 @@
 package learning.uitesting.selenium;
 
-import learning.uitesting.selenium.utilities.SeleniumBaseTest;
+import learning.uitesting.selenium.basetests.SeleniumBaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;

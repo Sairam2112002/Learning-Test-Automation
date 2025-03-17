@@ -1,6 +1,6 @@
 package learning.uitesting.selenium;
 
-import learning.uitesting.selenium.utilities.SeleniumBaseTest;
+import learning.uitesting.selenium.basetests.SeleniumBaseTest;
 import org.testng.annotations.Test;
 
 public class WebPageNavigationTest extends SeleniumBaseTest {

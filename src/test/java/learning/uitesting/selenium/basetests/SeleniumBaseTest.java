@@ -1,4 +1,4 @@
-package learning.uitesting.selenium.utilities;
+package learning.uitesting.selenium.basetests;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
