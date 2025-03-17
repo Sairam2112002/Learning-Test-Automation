@@ -1,5 +1,6 @@
 package learning.uitesting.selenium;
 
+import learning.uitesting.selenium.utilities.SeleniumBaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;

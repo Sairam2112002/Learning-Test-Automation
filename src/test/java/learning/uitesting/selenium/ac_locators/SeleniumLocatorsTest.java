@@ -1,6 +1,6 @@
 package learning.uitesting.selenium.ac_locators;
 
-import learning.uitesting.selenium.SeleniumBaseTest;
+import learning.uitesting.selenium.utilities.SeleniumBaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;

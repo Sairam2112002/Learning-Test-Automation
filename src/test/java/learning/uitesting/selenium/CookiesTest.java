@@ -1,5 +1,6 @@
 package learning.uitesting.selenium;
 
+import learning.uitesting.selenium.utilities.SeleniumBaseTest;
 import org.openqa.selenium.Cookie;
 import org.testng.annotations.Test;
 

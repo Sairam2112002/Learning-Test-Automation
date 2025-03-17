@@ -1,5 +1,6 @@
 package learning.uitesting.selenium;
 
+import learning.uitesting.selenium.utilities.SeleniumBaseTest;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -8,7 +9,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class SeleniumWaitsTest extends SeleniumBaseTest{
+public class SeleniumWaitsTest extends SeleniumBaseTest {
     private WebDriverWait explicitWait;
     private FluentWait<WebDriver> fluentWait;
 
