@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 public class StaticDropdownsTest extends SeleniumBaseTest {
-    private UtilityMethods utilityMethods = new UtilityMethods();
+    private final UtilityMethods utilityMethods = new UtilityMethods();
 
     public StaticDropdownsTest() {
         xpathLocators.put("CURRENCY_DROPDOWN", "//select[@id='ctl00_mainContent_DropDownListCurrency']");
