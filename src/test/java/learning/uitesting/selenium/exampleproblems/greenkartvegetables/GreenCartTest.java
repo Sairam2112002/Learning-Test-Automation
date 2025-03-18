@@ -7,6 +7,15 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
+/*
+ * Steps:
+ * Navigate to GreenKart landing page
+ * Select 5 vegetables from each of specified type
+ * Add selected vegetables to cart
+ * Verify total price of added vegetables
+ * Proceed to checkout
+ * Place order
+ */
 public class GreenCartTest extends GreenKartBaseTest {
     private static final int expectedPriceOfAddedVegetables = 980;
 
