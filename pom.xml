@@ -43,9 +43,9 @@
     </pluginManagement>
   </build>
 
-<!--  General Dependencies-->
-
   <dependencies>
+    <!--  General Dependencies-->
+
     <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
