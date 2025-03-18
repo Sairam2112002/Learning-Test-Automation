@@ -16,10 +16,10 @@ import java.util.List;
  * Proceed to checkout
  * Place order
  */
-public class GreenCartTest extends GreenKartBaseTest {
+public class GreenKartTest extends GreenKartBaseTest {
     private static final int expectedPriceOfAddedVegetables = 980;
 
-    public GreenCartTest() {
+    public GreenKartTest() {
         xpathLocators.put("ALL_VEGETABLE_NAMES", "//div[@class='product']/h4");
         xpathLocators.put("INCREASE_VEGETABLE_BUTTON", "//h4[contains(text(), 'vegetableName')]/following-sibling::div[1]/a[2]");
         xpathLocators.put("VEGETABLE_COUNT", "//h4[contains(text(), 'vegetableName')]/following-sibling::div[1]/input");
@@ -103,8 +103,10 @@ public class GreenCartTest extends GreenKartBaseTest {
     public void placeOrder() {
         driver.findElement(By.xpath(xpathLocators.get("PLACE_ORDER_BUTTON"))).click();
 
+        waitForElementToBeVisible(xpathLocators.get("COUNTRY_DROPDOWN"));
         Select countryDropdown = new Select(driver.findElement(By.xpath(xpathLocators.get("COUNTRY_DROPDOWN"))));
         countryDropdown.selectByValue("India");
+        softAssertions.assertThat(countryDropdown.getFirstSelectedOption().getText()).isEqualTo("India");
 
         driver.findElement(By.xpath(xpathLocators.get("TERMS_AND_CONDITIONS_CHECKBOX"))).click();
 
