@@ -28,6 +28,7 @@ public class SeleniumBaseTest {
     protected static final String EXAMPLE_URL = "http://example.com";
     protected static final String WIKIPEDIA_URL = "https://www.wikipedia.org/";
     protected static final String OPEN_CART_URL = "https://naveenautomationlabs.com/opencart/";
+    protected static final String SPICEJET_URL = "https://www.spicejet.com/";
     protected static final String HEROKU_CHECKBOXES_URL = "https://the-internet.herokuapp.com/checkboxes";
     protected static final String HEROKU_JS_ALERTS_URL = "https://the-internet.herokuapp.com/javascript_alerts";
     protected static final String LAMBDATEST_SELENIUM_PLAYGROUND = "https://www.lambdatest.com/selenium-playground/";
