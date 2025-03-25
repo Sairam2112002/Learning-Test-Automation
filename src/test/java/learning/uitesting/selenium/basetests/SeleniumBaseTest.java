@@ -31,6 +31,8 @@ public class SeleniumBaseTest {
     protected static final String SPICEJET_URL = "https://www.spicejet.com/";
     protected static final String HEROKU_CHECKBOXES_URL = "https://the-internet.herokuapp.com/checkboxes";
     protected static final String HEROKU_JS_ALERTS_URL = "https://the-internet.herokuapp.com/javascript_alerts";
+    protected static final String HEROKU_DYNAMIC_LOADING_HIDDEN_ELEMENT_URL = "https://the-internet.herokuapp.com/dynamic_loading/1";
+    protected static final String HEROKU_DYNAMIC_LOADING_RENDERED_AFTER_ELEMENT_URL = "https://the-internet.herokuapp.com/dynamic_loading/2";
     protected static final String LAMBDATEST_SELENIUM_PLAYGROUND = "https://www.lambdatest.com/selenium-playground/";
     protected static final String LAMBDATEST_RADIO_BUTTONS_URL = "https://www.lambdatest.com/selenium-playground/radiobutton-demo";
     protected static final String LAMBDATEST_CHECKBOXES_URL = "https://www.lambdatest.com/selenium-playground/checkbox-demo";
