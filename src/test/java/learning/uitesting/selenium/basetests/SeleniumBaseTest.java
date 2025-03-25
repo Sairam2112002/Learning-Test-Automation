@@ -7,8 +7,8 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,6 +31,7 @@ public class SeleniumBaseTest {
     protected static final String WIKIPEDIA_URL = "https://www.wikipedia.org/";
     protected static final String OPEN_CART_URL = "https://naveenautomationlabs.com/opencart/";
     protected static final String SPICEJET_URL = "https://www.spicejet.com/";
+    protected static final String HEROKU_URL = "https://the-internet.herokuapp.com/";
     protected static final String HEROKU_CHECKBOXES_URL = "https://the-internet.herokuapp.com/checkboxes";
     protected static final String HEROKU_JS_ALERTS_URL = "https://the-internet.herokuapp.com/javascript_alerts";
     protected static final String HEROKU_DYNAMIC_LOADING_HIDDEN_ELEMENT_URL = "https://the-internet.herokuapp.com/dynamic_loading/1";
@@ -46,21 +47,21 @@ public class SeleniumBaseTest {
     protected static final String RAHUL_SHETTY_ACADEMY_LOCATORS_PRACTICE = "https://rahulshettyacademy.com/locatorspractice/";
     protected static final String RAHUL_SHETTY_ACADEMY_DROPDOWN_PRACTICE = "https://rahulshettyacademy.com/dropdownsPractise/";
 
-    @BeforeClass
+    @BeforeSuite
     public void baseSetup() {
         logger = LogManager.getLogger(this.getClass());
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
 
-    @AfterClass
+    @AfterSuite
     public void tearDown() {
         driver.quit();
     }
 
-    public void wait(int seconds) {
+    public void wait(int milliSeconds) {
         try {
-            Thread.sleep(seconds * 1000L);
+            Thread.sleep(milliSeconds);
         } catch(InterruptedException interruptedException) {
             logger.error(interruptedException.getMessage());
         }
