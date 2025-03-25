@@ -4,7 +4,7 @@ import learning.uitesting.selenium.basetests.SeleniumBaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.*;
 import org.testng.annotations.Test;
 
 /*
@@ -12,6 +12,17 @@ import org.testng.annotations.Test;
  *
  * Actions class implements builder pattern i.e. we can build a composite action that contains chain of individual
  * actions and are executed in sequence.
+ *
+ * build() method simply compiles all the actions into a single "Action" class object ready to be performed,
+ * it also resets the internal builder state, so subsequent calls to this method will contain fresh sequences. And still
+ * the actions are performed when build() method is called.
+ *
+ * perform() is a method used to perform the actions. Even the perform() method in "Actions" class used build() method
+ * first and then calls another perform() method from "BuiltAction" class.
+ *
+ * Note: "BuiltAction" class is a private static inner class inside "Actions" class itself.
+ *
+ * Hence, there is no need to call build() method explicitly. It happens implicitly when perform() method is called.
  *
  * Some examples are given below
  */
