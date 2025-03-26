@@ -5,18 +5,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
+/*
+ * Both frames and iframes can be accessed with "index", "name or id" and "WebElement" with same methods.
+ * The index of frames and iframes starts from "0".
+ *
+ * switchTo().defaultContext() method is used to switch back to the main content of the webpage,
+ * as any further operations might cause a NoSuchElementException if they are directed at elements outside the
+ * frame/iframe context.
+ *
+ * switchTo().parentFrame() method is used to switch to parent frame.
+ */
 public class FramesAndIframesTest extends SeleniumBaseTest {
-    /*
-     * Both frames and iframes can be accessed with "index", "name or id" and "WebElement" with same methods.
-     * The index of frames and iframes starts from "0".
-     *
-     * switchTo().defaultContext() method is used to switch back to the main content of the webpage,
-     * as any further operations might cause a NoSuchElementException if they are directed at elements outside the
-     * frame/iframe context.
-     *
-     * switchTo().parentFrame() method is used to switch to parent frame.
-     */
-
     private WebElement iframeEditorArea;
 
     @Test(priority = 1)
