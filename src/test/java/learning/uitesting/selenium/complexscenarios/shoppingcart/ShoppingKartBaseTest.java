@@ -1,4 +1,4 @@
-package learning.uitesting.selenium.exampleproblems.shoppingcart;
+package learning.uitesting.selenium.complexscenarios.shoppingcart;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,7 +20,6 @@ public class ShoppingKartBaseTest {
     private static final long DEFAULT_TIME_OUT_IN_SECONDS = 5;
 
     protected static WebDriver driver;
-    protected SoftAssertions softAssertions;
     protected Logger logger;
 
     protected final HashMap<String, String> xpathLocators = new HashMap<>();
@@ -29,7 +28,6 @@ public class ShoppingKartBaseTest {
     public void setUp() {
         driver = new ChromeDriver();
         logger = LogManager.getLogger(this.getClass());
-        softAssertions = new SoftAssertions();
         driver.manage().window().maximize();
 
         driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
@@ -37,7 +35,6 @@ public class ShoppingKartBaseTest {
 
     @AfterClass
     public void tearDown() {
-        softAssertions.assertAll();
         driver.quit();
     }
 

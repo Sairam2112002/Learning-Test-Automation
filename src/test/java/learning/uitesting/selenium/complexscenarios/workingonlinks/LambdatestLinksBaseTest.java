@@ -1,4 +1,4 @@
-package learning.uitesting.selenium.exampleproblems.workingonlinks;
+package learning.uitesting.selenium.complexscenarios.workingonlinks;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

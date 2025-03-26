@@ -1,4 +1,4 @@
-package learning.uitesting.selenium.exampleproblems.workingonlinks;
+package learning.uitesting.selenium.complexscenarios.workingonlinks;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

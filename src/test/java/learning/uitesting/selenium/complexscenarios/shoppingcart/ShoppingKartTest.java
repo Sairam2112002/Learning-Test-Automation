@@ -1,5 +1,6 @@
-package learning.uitesting.selenium.exampleproblems.shoppingcart;
+package learning.uitesting.selenium.complexscenarios.shoppingcart;
 
+import static org.assertj.core.api.Assertions.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -40,7 +41,7 @@ public class ShoppingKartTest extends ShoppingKartBaseTest {
     @Test(priority = 1)
     public void testPageTitle() {
         logger.info("Page title: " + driver.getTitle());
-        softAssertions.assertThat(driver.getTitle()).isEqualTo("GreenKart - veg and fruits kart");
+        assertThat(driver.getTitle()).isEqualTo("GreenKart - veg and fruits kart");
     }
 
     @Test(priority = 2)
@@ -62,7 +63,7 @@ public class ShoppingKartTest extends ShoppingKartBaseTest {
                         .findElement(By.xpath(xpathLocators.get("VEGETABLE_COUNT").replace("vegetableName", vegetableName)));
                 int noOfVegetablesAdded = Integer.parseInt(vegetableCountElement.getDomProperty("value"));
 
-                softAssertions.assertThat(noOfVegetablesAdded).isEqualTo(noOfVegetablesToAdd);
+                assertThat(noOfVegetablesAdded).isEqualTo(noOfVegetablesToAdd);
                 logger.info("Number of " + vegetableName + "s added = " + noOfVegetablesAdded);
             }
         }
@@ -74,7 +75,7 @@ public class ShoppingKartTest extends ShoppingKartBaseTest {
             WebElement addToCartButton = driver.findElement(By.xpath(xpathLocators.get("ADD_TO_CART").replace("vegetableName", vegetableName)));
             addToCartButton.click();
 
-            softAssertions.assertThat(addToCartButton.getText()).contains("ADDED");
+            assertThat(addToCartButton.getText()).contains("ADDED");
             logger.info(vegetableName + "s added to cart");
         }
     }
@@ -83,7 +84,7 @@ public class ShoppingKartTest extends ShoppingKartBaseTest {
     public void verifyTotalPriceOfAddedVegetables() {
         int totalPriceOfAddedVegetables = Integer.parseInt(driver.findElement(By.xpath(xpathLocators.get("CART_PRICE"))).getText());
 
-        softAssertions.assertThat(totalPriceOfAddedVegetables).isEqualTo(expectedPriceOfAddedVegetables);
+        assertThat(totalPriceOfAddedVegetables).isEqualTo(expectedPriceOfAddedVegetables);
         logger.info("Total price of cart = Rs. " + totalPriceOfAddedVegetables);
     }
 
@@ -95,7 +96,7 @@ public class ShoppingKartTest extends ShoppingKartBaseTest {
         waitForElementToBeVisible(xpathLocators.get("CHECKOUT_TOTAL_AMOUNT"));
         int totalPriceOfAddedVegetables = Integer.parseInt(driver.findElement(By.xpath(xpathLocators.get("CHECKOUT_TOTAL_AMOUNT"))).getText());
 
-        softAssertions.assertThat(totalPriceOfAddedVegetables).isEqualTo(expectedPriceOfAddedVegetables);
+        assertThat(totalPriceOfAddedVegetables).isEqualTo(expectedPriceOfAddedVegetables);
         logger.info("Total price at checkout = Rs. " + totalPriceOfAddedVegetables);
     }
 
@@ -106,7 +107,7 @@ public class ShoppingKartTest extends ShoppingKartBaseTest {
         waitForElementToBeVisible(xpathLocators.get("COUNTRY_DROPDOWN"));
         Select countryDropdown = new Select(driver.findElement(By.xpath(xpathLocators.get("COUNTRY_DROPDOWN"))));
         countryDropdown.selectByValue("India");
-        softAssertions.assertThat(countryDropdown.getFirstSelectedOption().getText()).isEqualTo("India");
+        assertThat(countryDropdown.getFirstSelectedOption().getText()).isEqualTo("India");
 
         driver.findElement(By.xpath(xpathLocators.get("TERMS_AND_CONDITIONS_CHECKBOX"))).click();
 
@@ -115,7 +116,7 @@ public class ShoppingKartTest extends ShoppingKartBaseTest {
         String expectedMessage = "Thank you, your order has been placed successfully" + "\n" + "You'll be redirected to Home page shortly!!";
         String actualMessage = driver.findElement(By.xpath(xpathLocators.get("FINAL_SUCCESS_MESSAGE"))).getText();
 
-        softAssertions.assertThat(actualMessage).isEqualTo(expectedMessage);
+        assertThat(actualMessage).isEqualTo(expectedMessage);
         logger.info(actualMessage.replace("\n", " "));
     }
 }
