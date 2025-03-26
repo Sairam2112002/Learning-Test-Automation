@@ -1,4 +1,4 @@
-package learning.uitesting.selenium;
+package learning.uitesting.selenium.al_frames;
 
 import learning.uitesting.selenium.basetests.SeleniumBaseTest;
 import org.openqa.selenium.By;
@@ -7,13 +7,14 @@ import org.testng.annotations.Test;
 
 public class FramesAndIframesTest extends SeleniumBaseTest {
     /*
-     * Both frames and iframes can be accessed with index, name or id and web element with same methods
+     * Both frames and iframes can be accessed with "index", "name or id" and "WebElement" with same methods.
+     * The index of frames and iframes starts from "0".
      *
      * switchTo().defaultContext() method is used to switch back to the main content of the webpage,
-     * as any further operations might cause a NoSuchElementException
-     * if they are directed at elements outside the frame/iframe context
+     * as any further operations might cause a NoSuchElementException if they are directed at elements outside the
+     * frame/iframe context.
      *
-     * switchTo().parentFrame() method is used to switch to parent frame
+     * switchTo().parentFrame() method is used to switch to parent frame.
      */
 
     private WebElement iframeEditorArea;
