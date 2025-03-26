@@ -1,4 +1,4 @@
-package learning.uitesting.selenium.exampleproblems.greenkartvegetables;
+package learning.uitesting.selenium.exampleproblems.shoppingcart;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -16,10 +16,10 @@ import java.util.List;
  * Proceed to checkout
  * Place order
  */
-public class GreenKartTest extends GreenKartBaseTest {
+public class ShoppingKartTest extends ShoppingKartBaseTest {
     private static final int expectedPriceOfAddedVegetables = 980;
 
-    public GreenKartTest() {
+    public ShoppingKartTest() {
         xpathLocators.put("ALL_VEGETABLE_NAMES", "//div[@class='product']/h4");
         xpathLocators.put("INCREASE_VEGETABLE_BUTTON", "//h4[contains(text(), 'vegetableName')]/following-sibling::div[1]/a[2]");
         xpathLocators.put("VEGETABLE_COUNT", "//h4[contains(text(), 'vegetableName')]/following-sibling::div[1]/input");

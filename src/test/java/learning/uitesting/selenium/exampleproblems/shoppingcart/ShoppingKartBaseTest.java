@@ -1,4 +1,4 @@
-package learning.uitesting.selenium.exampleproblems.greenkartvegetables;
+package learning.uitesting.selenium.exampleproblems.shoppingcart;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,7 +14,7 @@ import org.testng.annotations.BeforeClass;
 import java.time.Duration;
 import java.util.HashMap;
 
-public class GreenKartBaseTest {
+public class ShoppingKartBaseTest {
     private WebDriverWait webDriverWait;
 
     private static final long DEFAULT_TIME_OUT_IN_SECONDS = 5;
